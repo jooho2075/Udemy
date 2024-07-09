@@ -1,0 +1,115 @@
+/*65. 세미콜론과 css*/
+/*
+h2 {
+    color : #5FCFFC;
+    background-color: rgb(89, 151, 0);
+}
+
+button {
+    color: magenta;
+    background-color: cyan;
+}
+
+p {
+    color: Olive;
+    background: orange;
+}
+
+body {
+    background-color: #cc55ee;
+}
+*/
+
+/*66. 일반 텍스트 속성*/
+/*67. 픽셀로 글꼴 크기 지정하기*/
+/*
+h1 {
+    text-align: center;
+    font-weight: normal;
+    text-decoration: #f78120 underline wavy;
+    letter-spacing: 15px;
+    font-size: 80px;
+    font-family: Arial;
+}
+a {
+    text-decoration: none;
+}
+p {
+    line-height: 2;
+}
+*/
+
+/*70. 전체 요소 선택자*/
+/*71. ID선택자*/
+/*
+* {
+    background-color: cyan;
+}
+*/
+
+body {
+    background-color: #f1faee;
+}
+button {
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+
+h1, h2 {
+    color: #1d3557;
+}
+
+#signup {
+    background-color: #1d3557;
+    color: #f1faee;
+}
+
+/*72. 클래스 선택자*/
+span {
+    color: #457b9d;
+}
+
+.tag {
+    background-color: #e63946;
+    color: #f1faee;
+    font-size: 16px;
+}
+
+/*73. 자손 선택자*/
+.post a {
+    color: #457b9d;
+}
+
+footer a {
+    color: #e63946;
+}
+
+/*74. 인접 선택자와 직계 자손 선택자*/
+/*
+input + button {
+    background-color: pink;
+}
+*/
+
+h2 + button {
+    font-size: 20px;
+}
+
+footer > a {
+    color: #a8dadc;
+}
+
+/*75. 속성 선택자*/
+input[type="password"] {
+    color: greenyellow;
+}
+
+/*
+section[class="post"] {
+    background-color: purple;
+}
+*/
+
+a[href*="google"] {
+    color: magenta;
+}
