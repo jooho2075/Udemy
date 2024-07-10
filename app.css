@@ -146,3 +146,8 @@ p::first-line {
 p::selection {
     background-color: #fcbf49;
 }
+
+/*78. 계단식 css*/
+h1, h2 {
+    color: yellow;
+}
