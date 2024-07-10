@@ -117,10 +117,12 @@ a[href*="google"] {
 }
 
 /*76 유사클래스(pseudo class)*/
+/*
 .post button:hover {
     background-color: #e63946;
     color: #f1faee;
 }
+*/
 
 .post a:hover {
     text-decoration: underline;
@@ -148,6 +150,18 @@ p::selection {
 }
 
 /*78. 계단식 css*/
+/*
 h1, h2 {
     color: yellow;
+}
+*/
+
+/*79. 우선순위 css*/
+.post button:hover {
+    background-color: #e63946;
+    color: #f1faee;
+}
+
+button:hover {
+    background-color: olive;
 }
