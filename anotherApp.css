@@ -1,0 +1,24 @@
+/*82. 상속 css*/
+body {
+    color: purple;
+}
+
+h1 {
+    color: blue;
+}
+
+/*
+section {
+    color: aqua;
+}
+*/
+
+/*
+form {
+    color: greenyellow;
+}
+*/
+
+button, input {
+    color: inherit;
+}
