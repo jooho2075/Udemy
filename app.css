@@ -165,3 +165,10 @@ h1, h2 {
 button:hover {
     background-color: olive;
 }
+
+/*81. 인라인 스타일과 중요도*/
+/*
+button {
+    background-color: magenta !important;
+}
+*/
