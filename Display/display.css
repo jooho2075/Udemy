@@ -1,0 +1,45 @@
+/*88. 디스플레이 속성*/
+/*
+h1 {
+    background-color: palegoldenrod;
+    border: 1px solid black;
+    display: inline;
+}
+
+span {
+    background-color: paleturquoise;
+    border: 1px solid black;
+    display: block;
+}
+*/
+
+span {
+    background-color: palevioletred;
+    border: 1px solid black;
+    width: 500px;
+    padding: 100px;
+    margin: 50px;
+}
+
+h1 {
+    background-color: paleturquoise;
+    border: 1px solid black;
+    width: 300px;
+    /*
+    height: 200px;
+    */
+    padding: 50px;
+    margin: 100px;
+    /*
+    display: none;
+    */
+}
+
+div {
+    height: 200px;
+    width: 200px;
+    background-color: olivedrab;
+    border: 5px solid black;
+    display: inline-block;
+    margin: 50px;
+}
