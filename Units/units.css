@@ -19,12 +19,16 @@ h1 {
 
 /*90.CSS단위: ems*/
 h2 {
+    /*
     font-size: 5em;
+    */
     margin-left: 1em;
 }
 
 h3 {
+    /*
     font-size: 1.5em;
+    */
 }
 
 p {
@@ -41,4 +45,29 @@ button {
     border-radius: 0.5em;
     background-color: #2a9d8f;
     color: white;
+}
+
+/*91.CSS단위: rems*/
+ul {
+    font-size: 0.7em;
+}
+
+#rems h2{
+    font-size: 3rem;
+}
+
+#rems h3{
+    font-size: 2rem;
+}
+
+#rems ul{
+    font-size: 0.8rem;
+}
+
+#rems button{
+    font-size: 1.5rem;
+}
+
+html {
+    font-size: 30px;
 }
