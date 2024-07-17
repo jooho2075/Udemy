@@ -9,6 +9,7 @@ h1 {
     width: 100px;
     padding-left: 100px;
     padding-top: 50px;
+    margin: 0;  
 }
 
 /*85. 박스모델: 테두리와 모깎기*/
@@ -18,6 +19,8 @@ h1 {
     border-color: black;
     border-style: solid;
     /*box-sizing: border-box;*/
+    margin-left: 50px;
+    margin-bottom: 100px;
 }
 
 #two {
@@ -27,6 +30,7 @@ h1 {
     border-style: dashed;
     border-left-width: 8px;
     padding-right: 50px;
+    margin: 200px;
 }
 
 #three {
@@ -39,4 +43,14 @@ h1 {
 /*86. 박스모델: 패딩*/
 button {
     padding: 10px 20px 30px 40px;
+}
+
+/*87. 박스모델: 여백(margin)*/
+body {
+    margin: 0;
+}
+
+span {
+    margin-left: 30px;
+    margin-top: 30px;
 }
