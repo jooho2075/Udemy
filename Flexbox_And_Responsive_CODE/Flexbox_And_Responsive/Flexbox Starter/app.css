@@ -56,14 +56,43 @@ h1 {
     flex-wrap: wrap-reverse;
     align-items: flex-end;
     */
-}
+
+    /*109_AlignContentAlignSelf*/
+    /*
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-direction: column;
+    align-content: center;
+    align-content: flex-start;
+    align-content: space-between;
+    */
+    }
 
 #container div {
     width: 200px;
     height: 200px;
     text-align: center;
+
     /*108_AlignItems*/
     /*
     font-size: 4em;
     */
 }
+
+/*109_AlignContentAlignSelf*/
+/*
+div:nth-of-type(3) {
+    align-self: flex-end;
+}
+
+div:nth-of-type(2) {
+    align-self: center;
+}
+
+div:nth-of-type(5) {
+    align-self: flex-start;
+}
+*/
