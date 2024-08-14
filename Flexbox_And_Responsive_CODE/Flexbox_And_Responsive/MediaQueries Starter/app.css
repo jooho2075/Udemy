@@ -16,5 +16,59 @@ ul,li {
     padding: 0;
 }
 
+/*113_ability of media query*/
+/*최소가 800px이고 이 크기를 넘어가면 색상이 변함*/
+/*
+@media (min-width: 600px) and (max-width: 800px) {
+    h1 {
+        color: purple;
+    }
+}
+*/
 
+/*좀 더 보편적인 방식*/
+/*
+@media (max-width: 1500px) {
+    h1 {
+        color: yellow;
+    }
+}
+@media (max-width: 1000px) {
+    h1 {
+        color: orange;
+    }
+}
+@media (max-width: 500px) {
+    h1 {
+        color: red;
+    }
+}
+*/
 
+h1 {
+    color: red;
+}
+
+@media (min-width: 500px) {
+    h1 {
+        color: orange;
+    }
+}
+
+@media (min-width: 1000px) {
+    h1 {
+        color: yellow;
+    }
+}
+
+@media (min-width: 1500px) {
+    h1 {
+        color: green;
+    }
+}
+
+@media (orientation: landscape) {
+    body {
+        background-color: magenta;
+    }
+}
