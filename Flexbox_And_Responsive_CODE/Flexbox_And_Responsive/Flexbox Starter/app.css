@@ -43,9 +43,27 @@ h1 {
     flex-wrap: nowrap
     flex-wrap: wrap-reverse;
     */
+
+    /*108_AlignItems*/
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: center;
+    align-items: baseline;
+    flex-wrap: wrap-reverse;
+    align-items: flex-end;
+    */
 }
 
 #container div {
-    width: 600px;
+    width: 200px;
     height: 200px;
+    text-align: center;
+    /*108_AlignItems*/
+    /*
+    font-size: 4em;
+    */
 }
