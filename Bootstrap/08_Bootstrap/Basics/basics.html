@@ -20,7 +20,11 @@
         -->
         <!--126_Bootstrap_Typography_Utility-->
         <h1 class="display-1 text-center text-primary">Bootstrap Playground</h1>
-        <h2 class="display-4">Buttons</h2>
+        
+        <!--127_Badge_Alerts_ButtonGroup-->
+        <h2 class="display-4">Buttons<span class="badge badge-success badge-pill">New</span></h2>
+        <!--badge-pill : 모서리 둥글게-->
+        
         <!--125_BootstrapButton-->
         <button type="button" class="btn btn-primary">Primary</button>
         <button type="button" class="btn btn-success">Success</button>
@@ -31,6 +35,25 @@
         <button class="btn btn-outline-info btn-lg">Info Outline</button>
         <button class="btn btn-secondary btn-sm">SM Button</button>
         <button type="button" class="btn btn-success" disabled>Success Disabled</button>
+
+        <!--127_Badge_Alerts_ButtonGroup-->
+        <button class="btn btn-primary">Updates <span class="badge badge-light">9</span></button>
+        <h3>Button Groups</h3>
+        <div class="btn-group">
+            <button class="btn btn-warning">One</button>
+            <button class="btn btn-warning">Two</button>
+            <button class="btn btn-warning">Three</button>
+        </div>
+        <h3>Alert</h3>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <!--alert-dismissible fade show : 서서히 사라지도록 하는 것-->
+            <h4 class="alert-heading">Oh no!!</h4>
+            Danger : You are about to end the world as we know it!
+            <button aria-label="Close" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
         <!--126_Bootstrap_Typography_Utility-->
         <h2 class="display-4">Typography</h2>
         <p class="lead">
@@ -47,6 +70,7 @@
             <footer class="blockquote-footer">Mr. Lorem Ipsum</footer>
         </blockquote>
     </div>
+    
     <!--Bootstrap 필요사항-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
