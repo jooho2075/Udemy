@@ -69,6 +69,7 @@ if(random < 0.5) {
 console.log(random);
 */
 
+/* 
 const age = 89;
 if(age < 5) {
     console.log("Free");
@@ -78,4 +79,20 @@ if(age < 5) {
     console.log("Adult");
 } else {
     console.log("you are a senior");
+} 
+*/
+
+//172_Nesting
+const password = prompt("please enter a new password");
+
+// password must be 6+ characters
+if(password.length >= 6) {
+    // password cannot include space
+    if(password.indexOf(' ') === -1) {
+        console.log("valid password")
+    } else {
+        console.log("invalid password")
+    }
+} else {
+    console.log("too short")
 }
