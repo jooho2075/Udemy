@@ -83,11 +83,11 @@ if(age < 5) {
 */
 
 //172_Nesting
-const password = prompt("please enter a new password");
-
 // password must be 6+ characters
+// password cannot include space
+/* 
+const password = prompt("please enter a new password");
 if(password.length >= 6) {
-    // password cannot include space
     if(password.indexOf(' ') === -1) {
         console.log("valid password")
     } else {
@@ -96,3 +96,21 @@ if(password.length >= 6) {
 } else {
     console.log("too short")
 }
+*/
+
+//173_TruthY_FalseY
+/* 
+const userInput = prompt("Enter something");
+if(userInput) {
+    console.log("Truthy");
+} else {
+    console.log("Falsy");
+}
+*/
+
+/* 
+if(null) {
+    console.log("Truthy")
+} else {
+    console.log("Falsy")
+} */
