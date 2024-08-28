@@ -21,7 +21,8 @@ if(random >= 0.5) {
 */
 
 //170_elseif구문
-/* const dayOfWeek = 'Friday';
+/* 
+const dayOfWeek = 'Friday';
 if(dayOfWeek === 'Monday') {
     console.log("I hate Mondays")
 } else if(dayOfWeek === 'Saturday') {
@@ -31,7 +32,8 @@ if(dayOfWeek === 'Monday') {
 } 
 */
 
-/* const age = 8;
+/* 
+const age = 8;
 if(age < 5) {
     console.log("Free");
 } else if(age < 10) {
@@ -42,3 +44,38 @@ if(age < 5) {
     console.log("Senior");
 }
 */
+
+//171_else구문
+/* 
+const dayOfWeek = prompt('Enter a Day').toLowerCase();
+if(dayOfWeek === 'monday') {
+    console.log("I hate Mondays");
+} else if(dayOfWeek === 'saturday') {
+    console.log("I love Saturdays");
+} else if(dayOfWeek === 'friday') {
+    console.log("I like Fridays");
+} else {
+    console.log("MEH")
+}
+*/
+
+/* 
+let random = Math.random();
+if(random < 0.5) {
+    console.log("your number is less than 0.5");
+} else {
+    console.log("your number is greater (or equal) than 0.5");
+}
+console.log(random);
+*/
+
+const age = 89;
+if(age < 5) {
+    console.log("Free");
+} else if(age < 10) {
+    console.log("Child");
+} else if(age < 65) {
+    console.log("Adult");
+} else {
+    console.log("you are a senior");
+}
