@@ -126,6 +126,7 @@ if(password.length >= 6 && password.indexOf(' ') === -1) {
 */
 
 //175_logicalOperators_Or
+/* 
 const age = -90;
 if(age >= 0 && age < 5 || age >= 65) {
     console.log("free");
@@ -135,4 +136,20 @@ if(age >= 0 && age < 5 || age >= 65) {
     console.log("$20")
 } else {
     console.log("invalid age")
+} 
+*/
+
+//175_logicalOperators_Not
+/* 
+const firstName = prompt("Enter your first name");
+if(!firstName) {
+    firstName = prompt("try again");
 }
+*/
+
+/* 
+const age = 45;
+if(!(age >= 0 && age < 5 || age >= 65)) {
+    console.log("not baby or senior");
+} 
+*/
