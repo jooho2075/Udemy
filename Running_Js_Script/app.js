@@ -114,3 +114,11 @@ if(null) {
 } else {
     console.log("Falsy")
 } */
+
+//174_logicalOperators_And
+const password = prompt("Enter your password");
+if(password.length >= 6 && password.indexOf(' ') === -1) {
+    console.log("valid password")
+} else {
+    console.log("invalid password")
+}
