@@ -66,3 +66,19 @@ for(let i = 0; i < seatingChart.length; i++) {
 } 
 */
 
+//200_WhileLoop
+/* 
+let count = 0;
+while(count < 10) {
+    console.log(count);
+    count++;
+}
+*/
+
+const secretCode = "babyhippo";
+
+let guess = prompt("enter the secret code");
+while(guess !== secretCode) {
+    guess = prompt("enter the secret code again....");
+}
+
