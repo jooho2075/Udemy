@@ -75,10 +75,32 @@ while(count < 10) {
 }
 */
 
+/*
 const secretCode = "babyhippo";
 
 let guess = prompt("enter the secret code");
 while(guess !== secretCode) {
     guess = prompt("enter the secret code again....");
 }
+*/
 
+// 201_break
+/*
+let input = prompt("Hey, say something")
+while(true) {
+    input = prompt(input);
+    if(input.toLowerCase() == "stop copying me") {
+        break;
+    }
+}
+*/
+
+/*
+for(let i = 0; i < 1000; i++) {
+    console.log(i);
+    if(i === 100) {
+        break;
+    }
+}
+console.log("Ok you win!!");
+*/
