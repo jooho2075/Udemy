@@ -106,6 +106,7 @@ console.log("Ok you win!!");
 */
 
 // 202,203_guesing game(추측 게임 만들기)
+/*
 let maximum = parseInt(prompt("Enter the maximum number"));
 while(!maximum) {
     maximum = parseInt(prompt("Enter a valid number!"));
@@ -138,3 +139,44 @@ if(guess === 'q') {
     console.log("Congratulation!");
     console.log(`You got it! It took you ${attempts} guesses`);
 }
+*/
+
+//204_for of
+/*
+const subreddits = ['scinge', 'books', 'chickens', 'funny', 'pics', 'soccer'];
+
+for(let i = 0; i < subreddits.length; i++) {
+    console.log(`Visits reddit.com/r/${subreddits[i]}`);
+}
+
+for(let sub of subreddits) {
+    console.log(`Visit reddit.com/r/${sub}`);
+}
+*/
+
+/*
+const seatingChart = [
+    ['a', 'b', 'c'],
+    ['d', 'e', 'f'],
+    ['g', 'h', 'i']
+]
+
+for(let i = 0; i < seatingChart.length; i++) {
+    const row = seatingChart[i];
+    for(let j = 0; j < row.length; j++) {
+        console.log(row[j]);
+    }
+}
+
+for (let row of seatingChart) {
+    for(let student of row) {
+        console.log(student);
+    }
+}
+*/
+
+/*
+for(let char of "hello world") {
+    console.log(char);
+}
+*/
