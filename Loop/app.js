@@ -180,3 +180,35 @@ for(let char of "hello world") {
     console.log(char);
 }
 */
+
+// 205_iterable object(객체 루프)
+/*
+const testScores = {
+    a1 : 80,
+    a2 : 67,
+    a3 : 89,
+    a4 : 91,
+    a5 : 72,
+    a6 : 77,
+    a7 : 83,
+    a8 : 97,
+    a9 : 81,
+    a10 : 60,
+}
+*/
+
+/*
+for(let person in testScores) {
+    console.log(`${person} socred ${testScores[person]}`);
+}
+*/
+
+//평균 구하기
+/*
+let total = 0
+let scores = Object.values(testScores);
+for(let score of Object.values(testScores)) {
+    total += score;
+}
+console.log(total / scores.length);
+*/
