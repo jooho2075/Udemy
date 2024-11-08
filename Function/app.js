@@ -173,6 +173,7 @@ const myMath = {
 */
 
 // section222 - 'this' 키워드
+/*
 const cat = {
     name: 'blue',
     color: 'grey',
@@ -184,3 +185,24 @@ const cat = {
 }
 
 const meow2 = cat.meow;
+*/
+
+// section223 - try/catch
+/*
+try {
+    hello.toUpperCase();
+} catch {
+    console.log("error");
+}
+
+console.log("After");
+*/
+
+function yell(msg) {
+    try {
+        console.log(msg.toUpperCase().repeat(3));
+    } catch(e) {
+        console.log(e);
+        console.log("please pass a string");
+    }
+}
