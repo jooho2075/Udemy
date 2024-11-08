@@ -160,6 +160,7 @@ const myMath = {
 */
 
 // shorthand 방법(속기법) -> 위와 같은 의미
+/*
 const myMath = {
     PI: 3.14,
     square(num) {
@@ -169,3 +170,17 @@ const myMath = {
         return num ** 3;
     }
 }
+*/
+
+// section222 - 'this' 키워드
+const cat = {
+    name: 'blue',
+    color: 'grey',
+    breed: 'scottish',
+    meow() {
+        console.log("This is : ", this);
+        console.log(`${this.name} says meow`);
+    }
+}
+
+const meow2 = cat.meow;
