@@ -49,9 +49,23 @@ function capitalize(word) {
 */
 
 // section215 - function scope(함수 범위)
+/*
 let bird = 'Scarlet Macaw';
 function birdWatch() {
     let bird = 'great blue heron';
     console.log(bird);
 }
 birdWatch();
+*/
+
+// section216 - block scope(블록 범위)
+/*
+let radius = 8;
+if(radius > 0) {
+    const PI = 3.14159;
+    let msg = 'HI!!';
+}
+
+console.log(radius);
+console.log(PI);
+*/
