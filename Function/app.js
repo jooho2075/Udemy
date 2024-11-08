@@ -15,6 +15,7 @@ function greet(firstName) {
 */
 
 // sectioin212 - Multiple Arguments
+/*
 function greet(firstName, lastName) {
     console.log(`Hey there, ${firstName} ${lastName[0]}!`);
 }
@@ -25,4 +26,13 @@ function repeat(msg, num) {
         result += msg;
     }
     console.log(result);
+}
+*/
+
+// section213 - return(반환) 키워드
+function add(x, y) {
+    if(typeof x !== 'number' || typeof y !== 'number') {
+        return false;
+    }
+    return x + y;
 }
