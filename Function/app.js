@@ -91,6 +91,7 @@ const add = function (x, y) {
 */
 
 // section219 - higher order function(고차함수)
+/*
 function callTwice(func) {
     func();
     func();
@@ -108,3 +109,37 @@ function rollDie() {
 }
 
 callTwice(rollDie);
+*/
+
+// section220 - return function(반환 함수)
+function makeMysteryFunc() {
+    const rand = Math.random()
+    if(rand > 0.5) {
+        return function() {
+            console.log("Congratualation");
+            console.log("you won the million dollars");
+        }
+    } else {
+        return function() {
+            alert("you've been infected");
+            alert("stop trying to close the window");
+            alert("stop trying to close the window");
+            alert("stop trying to close the window");
+            alert("stop trying to close the window");
+        }
+    }
+}
+
+function makeBetweenFunc(min, max) {
+    return function(num) {
+        return num >= min && num <= max;
+    }
+}
+
+function isBetween1(num) {
+    return num >= 50 && num <= 100
+}
+
+function isBetween2(num) {
+    return num >= 1 && num <= 10
+}
