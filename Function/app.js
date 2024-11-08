@@ -6,3 +6,8 @@ function singSong() {
     console.log("Mi");
 }
 */
+
+// section211 - Argument
+function greet(firstName) {
+    console.log(`firstName is : ${firstName}`);
+}
