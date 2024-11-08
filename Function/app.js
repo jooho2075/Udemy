@@ -36,3 +36,11 @@ function add(x, y) {
     }
     return x + y;
 }
+
+function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+/*
+    word.charAt(0).toUpperCase() : word의 첫글자를 대문자로 바꾼다는 의미
+    word.slice(1) : 첫글자를 제외한 나머지 부분 출력
+*/
