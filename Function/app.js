@@ -71,6 +71,7 @@ console.log(PI);
 */
 
 // section216 - lexical scope
+/*
 function bankRobbery() {
     const heroes = ['spiderman', 'wolverine', 'black panther', 'iron man'];
     function cryForHelp() {
@@ -80,3 +81,11 @@ function bankRobbery() {
     }
     cryForHelp();
 }
+*/
+
+// section217 - function expression(함수 표현식)
+/*
+const add = function (x, y) {
+    return x + y;
+}
+*/
