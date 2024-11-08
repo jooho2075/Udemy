@@ -112,6 +112,7 @@ callTwice(rollDie);
 */
 
 // section220 - return function(반환 함수)
+/*
 function makeMysteryFunc() {
     const rand = Math.random()
     if(rand > 0.5) {
@@ -142,4 +143,29 @@ function isBetween1(num) {
 
 function isBetween2(num) {
     return num >= 1 && num <= 10
+}
+*/
+
+// section221 - Methods
+/*
+const myMath = {
+    PI: 3.14,
+    square: function(num) {
+        return num * num;
+    },
+    cube: function(num) {
+        return num ** 3;
+    }
+}
+*/
+
+// shorthand 방법(속기법) -> 위와 같은 의미
+const myMath = {
+    PI: 3.14,
+    square(num) {
+        return num * num;
+    },
+    cube(num) {
+        return num ** 3;
+    }
 }
