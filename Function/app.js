@@ -69,3 +69,14 @@ if(radius > 0) {
 console.log(radius);
 console.log(PI);
 */
+
+// section216 - lexical scope
+function bankRobbery() {
+    const heroes = ['spiderman', 'wolverine', 'black panther', 'iron man'];
+    function cryForHelp() {
+        for(let hero of heroes) {
+            console.log(`please help me, ${hero.toUpperCase()}`);
+        }
+    }
+    cryForHelp();
+}
