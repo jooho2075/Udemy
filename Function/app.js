@@ -70,7 +70,7 @@ console.log(radius);
 console.log(PI);
 */
 
-// section216 - lexical scope
+// section217 - lexical scope
 /*
 function bankRobbery() {
     const heroes = ['spiderman', 'wolverine', 'black panther', 'iron man'];
@@ -83,9 +83,28 @@ function bankRobbery() {
 }
 */
 
-// section217 - function expression(함수 표현식)
+// section218 - function expression(함수 표현식)
 /*
 const add = function (x, y) {
     return x + y;
 }
 */
+
+// section219 - higher order function(고차함수)
+function callTwice(func) {
+    func();
+    func();
+} 
+
+function callTenTimes(f) {
+    for(let i = 0; i< 10; i++) {
+        f();
+    }
+}
+
+function rollDie() {
+    const roll = Math.floor(Math.random() * 6) + 1;
+    console.log(roll);
+}
+
+callTwice(rollDie);
