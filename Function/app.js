@@ -30,6 +30,7 @@ function repeat(msg, num) {
 */
 
 // section213 - return(반환) 키워드
+/*
 function add(x, y) {
     if(typeof x !== 'number' || typeof y !== 'number') {
         return false;
@@ -40,7 +41,17 @@ function add(x, y) {
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
+*/
+
 /*
     word.charAt(0).toUpperCase() : word의 첫글자를 대문자로 바꾼다는 의미
     word.slice(1) : 첫글자를 제외한 나머지 부분 출력
 */
+
+// section215 - function scope(함수 범위)
+let bird = 'Scarlet Macaw';
+function birdWatch() {
+    let bird = 'great blue heron';
+    console.log(bird);
+}
+birdWatch();
