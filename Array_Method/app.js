@@ -140,7 +140,9 @@ exams.some(score => score >= 75)
 */
 
 // section234 - Reduce
+/*
 const prices = [9.99, 1.50, 19.99, 49.9,30.5];
+*/
 
 /*
 let total = 0
@@ -165,5 +167,22 @@ const minPrice = prices.reduce((min, curr) => {
 })
 */
 
+/*
 const evens = [2,4,6,8];
 evens.reduce((sum, num) => sum + num, 100)
+*/
+
+// section235 - 화살표 함수와 this
+const person = {
+    firstName: 'park',
+    lastName: 'jooho',
+    fullName: function() {
+        return `${this.firstName} ${this.lastName}`;
+    },
+    shoutName: function() {
+        setTimeout(() => {
+            console.log(this);
+            console.log(this.fullName());
+        }, 3000)
+    }
+}
