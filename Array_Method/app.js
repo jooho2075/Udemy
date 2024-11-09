@@ -64,6 +64,7 @@ const add = (a,b) => a + b
 */
 
 // section230 - 화살표 함수의 요약
+/*
 const movies = [
     {
         title: 'Amadeus',
@@ -82,6 +83,7 @@ const movies = [
         score: 96
     },
 ];
+*/
 
 // mapping인 경우
 /*
@@ -98,4 +100,23 @@ const newMovies = movies.map(movie => (
 */
 
 // 위의 함수를 한 줄로
+/*
 const newMovies = movies.map(movie => (`${movie.title} - ${movie.score / 10}`))
+*/
+
+// section231 - setTimeOut, setInterval
+// setTimeOut
+/*
+console.log("hello")
+setTimeout(() => {
+    console.log("hi");
+}, 3000)
+console.log("....");
+*/
+
+// setInterval
+const id = setInterval(() => {
+    console.log(Math.random());
+}, 2000);
+
+clearInterval(id);
