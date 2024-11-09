@@ -132,7 +132,38 @@ numbers.filter(n => {
 */
 
 // section233 - some/every
+/*
 const exams = [80,98,92,78,77,90,89,84,81,77];
 
 exams.every(score => score >= 75)
 exams.some(score => score >= 75)
+*/
+
+// section234 - Reduce
+const prices = [9.99, 1.50, 19.99, 49.9,30.5];
+
+/*
+let total = 0
+for(let price of prices) {
+    total += price;
+}
+console.log(total);
+*/
+
+/*
+const total = prices.reduce((total, price) => {
+    return total + price
+})
+*/
+
+/*
+const minPrice = prices.reduce((min, curr) => {
+    if(curr < min) {
+        return curr;
+    }
+    return min;
+})
+*/
+
+const evens = [2,4,6,8];
+evens.reduce((sum, num) => sum + num, 100)
