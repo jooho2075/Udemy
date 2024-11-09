@@ -124,7 +124,15 @@ clearInterval(id);
 */
 
 // section232 - Filter method
+/*
 const numbers = [1,2,3,4,5,6,7,8,9,10];
 numbers.filter(n => {
     return n < 10
 })
+*/
+
+// section233 - some/every
+const exams = [80,98,92,78,77,90,89,84,81,77];
+
+exams.every(score => score >= 75)
+exams.some(score => score >= 75)
