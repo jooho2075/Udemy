@@ -115,8 +115,16 @@ console.log("....");
 */
 
 // setInterval
+/*
 const id = setInterval(() => {
     console.log(Math.random());
 }, 2000);
 
 clearInterval(id);
+*/
+
+// section232 - Filter method
+const numbers = [1,2,3,4,5,6,7,8,9,10];
+numbers.filter(n => {
+    return n < 10
+})
