@@ -43,3 +43,23 @@ const rollDie = () => {
 }
 */
 
+// section229 - 화살표 함수의 반환
+// return이 없는 경우 결과는 undefined
+/*
+const rollDie1 = () => {
+    Math.floor(Math.random() * 6) + 1;
+}
+*/
+
+// implicit return(암시적 반환)인 경우 : 정상 작동
+/*
+const rollDie2 = () => (
+    Math.floor(Math.random() * 6) + 1
+)
+*/
+
+// 이렇게 생기 경우도 가능한 경우(한 줄일 때 편리함)
+/*
+const add = (a,b) => a + b
+*/
+
