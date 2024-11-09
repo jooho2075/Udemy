@@ -63,3 +63,39 @@ const rollDie2 = () => (
 const add = (a,b) => a + b
 */
 
+// section230 - 화살표 함수의 요약
+const movies = [
+    {
+        title: 'Amadeus',
+        score: 99
+    },
+    {
+        title: 'Stand by me',
+        score: 98
+    },
+    {
+        title: 'Parasite',
+        score: 97
+    },
+    {
+        title: 'Alien',
+        score: 96
+    },
+];
+
+// mapping인 경우
+/*
+const newMovies = movies.map(function(movie) {
+    return `${movie.title} - ${movie.score  / 10}`;
+})
+*/
+
+// arrow function인 경우
+/*
+const newMovies = movies.map(movie => (
+    `${movie.title} - ${movie.score / 10}`
+))
+*/
+
+// 위의 함수를 한 줄로
+const newMovies = movies.map(movie => (`${movie.title} - ${movie.score / 10}`))
