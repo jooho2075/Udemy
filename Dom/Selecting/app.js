@@ -13,7 +13,9 @@ for(let img of squareImages) {
 */
 
 // class250 - querySelector/querySelectorAll
+/*
 const links = document.querySelectorAll('p a');
 for(let link of links) {
     console.log(link.href); // 모든 <a>tag 출처가 출력됨
 }
+*/
