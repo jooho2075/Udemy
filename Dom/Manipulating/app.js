@@ -18,8 +18,27 @@ span.innerText = 'Disgusting';
 
 // class252- 속성(Attribute)
 // 코딩연습54
+/*
 const eggImg = document.querySelector('img');
 // img요소 선택
 eggImg.src = 'https://devsprouthosting.com/images/chicken.jpg';
 // .src 속성을 사용하여 새 값 할당
 eggImg.alt = 'chicken'; 
+*/
+
+// class253 - style 변경하기
+const allLinks = document.querySelectorAll('a');
+
+for (let link of allLinks) {
+    link.style.color = 'cyan';
+    link.style.textDecorationColor = 'magenta';
+    link.style.textDecorationStyle = 'wavy'
+}
+
+// 코딩연습56 - 무지개 연습
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']; //PLEASE DON'T CHANGE THIS LINE!
+
+const spans = document.querySelectorAll('span');
+for(let i = 0; i < spans.length; i++) {
+    spans[i].style.color = colors[i];
+}
