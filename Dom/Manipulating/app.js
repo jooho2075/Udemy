@@ -27,6 +27,7 @@ eggImg.alt = 'chicken';
 */
 
 // class253 - style 변경하기
+/*
 const allLinks = document.querySelectorAll('a');
 
 for (let link of allLinks) {
@@ -34,11 +35,14 @@ for (let link of allLinks) {
     link.style.textDecorationColor = 'magenta';
     link.style.textDecorationStyle = 'wavy'
 }
+*/
 
 // 코딩연습56 - 무지개 연습
+/*
 const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']; //PLEASE DON'T CHANGE THIS LINE!
 
 const spans = document.querySelectorAll('span');
 for(let i = 0; i < spans.length; i++) {
     spans[i].style.color = colors[i];
 }
+*/
