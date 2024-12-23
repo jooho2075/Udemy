@@ -31,7 +31,7 @@ setTimeout(() => {
     }, 1000)
 }, 1000)
 */
-
+/*
 const delayedColorChange = (newColor, delay, doNext) => {
     setTimeout(() => {
         document.body.style.backgroundColor = newColor;
@@ -42,3 +42,6 @@ const delayedColorChange = (newColor, delay, doNext) => {
 delayedColorChange('olive', 3000, () => {
     console.log("Inside the callback");
 });
+*/
+
+//
