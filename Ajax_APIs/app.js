@@ -34,6 +34,7 @@ fetch("https://swapi.dev/api/people/1/") // 함수 호출(fetch함수가 promise
 */
 
 // 299. Introducing Axios
+/*
 axios.get("https://swapi.dev/api/people/1/") // fetch처럼 promise 반환
     .then(res => {
         console.log("response : ", res);
@@ -41,3 +42,28 @@ axios.get("https://swapi.dev/api/people/1/") // fetch처럼 promise 반환
     .catch(e => {
         console.log("error", e);
     });
+*/
+
+// 300.Axios로 Header 세팅하기
+const jokes = document.querySelector('#jokes');
+const button = document.querySelector('button');
+
+const addNewJoke = async () => {
+    const jokeText = await getDadJoke();
+    const newLI = document.createElement('LI');
+    newLI.append(jokeText);
+    jokes.append(newLI);
+}
+
+const getDadJoke = async () => {
+    try {
+        const config = { headers: {Accept: 'application/json'} } // Header 지정
+        const res = await axios.get('https://icanhazdadjoke.com/', config)
+    
+        return res.data.joke;
+    } catch(e) {
+        return "no jokes avaliable";
+    }
+}
+
+button.addEventListener('click', addNewJoke);
