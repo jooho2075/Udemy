@@ -68,6 +68,7 @@ const color2 = new Color(0, 0, 0);
 */
 
 // 307.JavaScript 클래스
+/*
 class Color { // 항상 constructor() {}추가 해야 함!!
     constructor(r, g, b, name) {
         this.r = r;
@@ -81,3 +82,33 @@ class Color { // 항상 constructor() {}추가 해야 함!!
 }
 
 const c1 = new Color(255, 67, 89, 'tomato');
+*/
+
+// 309.확장 및 super키워드
+class Pet {
+    constructor(name, age) {
+        console.log("in cat constructor");
+            this.name = name;
+            this.age = age;
+    }
+    eat() {
+        return `${this.name} is eating`;
+    }
+}
+
+class Cat extends Pet {
+    constructor(name, age, livesLeft = 9) {
+        console.log("in cat constructor");
+        super(name, age);
+        this.livesLeft = livesLeft;
+    }
+    meow() {
+        return `meow`;
+    }
+}
+
+class Dog extends Pet {
+    bark() {
+        return `bark`;
+    }
+}
