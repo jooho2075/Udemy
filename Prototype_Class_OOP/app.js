@@ -40,6 +40,7 @@ const firstColor = makeColor(35,255,150);
 */
 
 // 306.생성자 함수(Constructor function)
+/*
 function Color(r, g, b) {
     this.r = r;
     this.g = g;
@@ -64,3 +65,19 @@ Color.prototype.rgba = function(a = 1.0) {
 
 const color1 = new Color(40, 50, 60);
 const color2 = new Color(0, 0, 0);
+*/
+
+// 307.JavaScript 클래스
+class Color { // 항상 constructor() {}추가 해야 함!!
+    constructor(r, g, b, name) {
+        this.r = r;
+        this.g = g;
+        this.b = b;
+        this.colorName = name;
+    }
+    //greet() { // 모든 색상의 method가 됨
+    //    return `hello from ${this.colorName}`;
+    //}
+}
+
+const c1 = new Color(255, 67, 89, 'tomato');
