@@ -18,6 +18,7 @@ req.send();
 */
 
 // 298.Using the Fetch API
+/*
 fetch("https://swapi.dev/api/people/1/") // 함수 호출(fetch함수가 promise 반환)
     .then(res => {
         console.log("resolved", res);
@@ -30,3 +31,13 @@ fetch("https://swapi.dev/api/people/1/") // 함수 호출(fetch함수가 promise
     .catch((e) => {
         console.log("error", e);
     })
+*/
+
+// 299. Introducing Axios
+axios.get("https://swapi.dev/api/people/1/") // fetch처럼 promise 반환
+    .then(res => {
+        console.log("response : ", res);
+    })
+    .catch(e => {
+        console.log("error", e);
+    });
