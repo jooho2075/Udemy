@@ -17,6 +17,13 @@ app.get('/', (req, res) => { // 루트 라우트
     res.send('this is the home page');
 });
 
+app.get('/r/:subreddit', (req, res) => { // 패턴 정의
+    // console.log(req.params);
+    //res.send("this is a subreddit");
+    const {subreddit} = req.params;
+    res.send(`<h1>Browsing the ${subreddit} subreddit</h1>`);
+});
+
 app.post('/cats', (req, res) => {
     res.send('post request to /cats');
 });
