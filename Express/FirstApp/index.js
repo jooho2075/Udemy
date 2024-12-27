@@ -20,7 +20,7 @@ app.use((req, res) => { // app.use() 작동 방식 : 요청이 들어오면 콜�
 
 app.get('/', (req, res) => { // 루트 라우트
     // req 객체 : 쿼리라는 특성이 있음
-    res.send('this is the home page');
+    res.send('Welcome to the home page!');
 });
 
 app.get('/r/:subreddit', (req, res) => { // 패턴 정의
