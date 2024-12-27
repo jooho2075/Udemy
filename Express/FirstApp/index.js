@@ -1,6 +1,11 @@
 const express = require("express"); // Express 불러오기
 const app = express(); // Express 실행
 
+// app이 변수 이름일 경우 app.listen()을 입력 -> 요청받을 포트가 필요하기 때문
+app.listen(8080, () => {
+    console.log("listening on port 8080");
+});
+
 /*
 app.use((req, res) => { // app.use() 작동 방식 : 요청이 들어오면 콜백이 실행 됨
     // req : 들어오는 요청 의미하는 객체, res : 응답을 의미하는 객체
@@ -14,6 +19,7 @@ app.use((req, res) => { // app.use() 작동 방식 : 요청이 들어오면 콜�
 */
 
 app.get('/', (req, res) => { // 루트 라우트
+    // req 객체 : 쿼리라는 특성이 있음
     res.send('this is the home page');
 });
 
@@ -22,6 +28,11 @@ app.get('/r/:subreddit', (req, res) => { // 패턴 정의
     //res.send("this is a subreddit");
     const {subreddit} = req.params;
     res.send(`<h1>Browsing the ${subreddit} subreddit</h1>`);
+});
+
+app.get('/r/:subreddit/:postId', (req, res) => {
+    const { subreddit, postId } = req.params;
+    res.send(`<h1>Viewing post ID: ${postId} on the ${subreddit} subreddit</h1>`);
 });
 
 app.post('/cats', (req, res) => {
@@ -38,13 +49,18 @@ app.get('/dogs', (req, res) => {
     res.send('Woof');
 });
 
+app.get('/search', (req, res) => { // Query String(쿼리 문자열)
+    //console.log(req.query);
+    //res.send('Hi');
+    const {q} = req.query;
+    if(!q) {
+        res.send('nothing found if nothing searched');
+    }
+    res.send(`<h1>search result for : ${q}</h1>`);
+})
+
 // 제네릭 코드 : 항상 마지막에 와야함
 // 그렇지 않으면 제네릭 코드 아래 코드들이 전부 무시됨
 app.get('*', (req, res) => {
     res.send(`I don't know that path`);
-});
-
-// app이 변수 이름일 경우 app.listen()을 입력 -> 요청받을 포트가 필요하기 때문
-app.listen(8080, () => {
-    console.log("listening on port 8080");
 });
