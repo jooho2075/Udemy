@@ -26,6 +26,14 @@ app.get('/r/:subreddit', (req, res) => {
 });
 */
 
+// 357.ESJ Loop
+app.get('/cats', (req, res) => {
+    const cats = [
+        'blue', 'rocket', 'monty', 'stephanie', 'winston'
+    ];
+    res.render('cats', { cats });
+});
+
 app.listen(3000, () => {
     console.log("Listening on port 3000");
 });
