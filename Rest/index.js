@@ -31,6 +31,19 @@ app.get('/comments', (req, res) => {
     res.render('comments/index', { comments });
 });
 
+// Form을 보여주는 Get 라우트
+// 처리되는 다른 라우트 쪽으로 Post 요청으로 보내고
+app.get('/comments/new', (req, res) => { // form을 렌더링하는 /new 템플릿
+    res.render('comments/new');
+});
+
+// /comments의 Post라우트 -> 위의 form이 data를 제출하는 장소
+app.post('/comments', (req, res) => {
+    const { username, comment } = req.body;
+    comments.push({ username, comment });
+    res.send("It worked");
+});
+
 app.listen(3000, () => {
     console.log("on port 3000");
 });
