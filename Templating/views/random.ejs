@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random</title>
-</head>
+<%- include('partials/head') %>
 <body>
+    <%- include('partials/navbar') %>
     <h1>Your random number is : <%= num %></h1>
     <!--템플릿의 나머지 부분을 통제할 수 있도록 로직을 추가하는 역할-->
     <!--356.EJS 조건문-->
@@ -17,4 +12,3 @@
 
     <h3><%= num % 2 === 0 ? 'even' : 'odd' %></h3>
 </body>
-</html>

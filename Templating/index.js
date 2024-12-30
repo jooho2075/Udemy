@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const redditData = require('./data.json');
+const { name } = require('ejs');
+const { title } = require('process');
 
 
 // EJS의 사용을 알리는 부분(2개의 인수 사용 : view engine, ejf)
