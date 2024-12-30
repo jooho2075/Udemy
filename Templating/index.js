@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const redditData = require('./data.json');
+
 
 // EJS의 사용을 알리는 부분(2개의 인수 사용 : view engine, ejf)
 app.set('view engine', 'ejs');
@@ -18,13 +20,17 @@ app.get('/rand', (req, res) => {
     res.render('random', { num }); // {rand: num}객체는 템플릿(random.ejs)으로 전달됨
 }); // rand라는 변수에 접근이 가능함
 
-// 355.subreddit template demo
-/*
+// 355.subreddit template demo, 358.복잡한 subreddit demo 알아보기
 app.get('/r/:subreddit', (req, res) => {
     const { subreddit } = req.params;
-    res.render('subreddit', { subreddit });
+    const data = redditData[subreddit]; // data라는 전체 객체 생성
+    if(data) {
+        res.render('subreddit', { ...data });
+    } else {
+        res.render('notfound', { subreddit });
+    }
 });
-*/
+
 
 // 357.ESJ Loop
 app.get('/cats', (req, res) => {
