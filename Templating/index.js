@@ -6,10 +6,17 @@ const path = require('path');
 app.set('view engine', 'ejs');
 // index.js파일이 있는 현재 디렉토리를 가져와 그곳에 도달하기 위한 전체 디렉토리에 /views를 붙여주는 역할
 app.set('views', path.join(__dirname, '/views'));
+
 app.get('/', (req, res) => {
     //res.send("Hi");
     res.render('home.ejs');
 });
+
+// 354.템플릿에 데이터 전달하기 
+app.get('/rand', (req, res) => {
+    const num = Math.floor(Math.random() * 10) + 1;
+    res.render('random', { rand: num }); // {rand: num}객체는 템플릿(random.ejs)으로 전달됨
+}); // rand라는 변수에 접근이 가능함
 
 app.listen(3000, () => {
     console.log("Listening on port 3000");
