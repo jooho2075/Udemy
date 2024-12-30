@@ -40,6 +40,9 @@ app.get('/cats', (req, res) => {
     res.render('cats', { cats });
 });
 
+// 359.Express의 정적 Asset 사용하기
+app.use(express.static(path.join(__dirname, 'public'))); // index.js파일이 절대경로로 설정됨
+
 app.listen(3000, () => {
     console.log("Listening on port 3000");
 });
