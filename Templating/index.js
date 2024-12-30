@@ -13,18 +13,18 @@ app.get('/', (req, res) => {
 });
 
 // 354.템플릿에 데이터 전달하기
-/*
 app.get('/rand', (req, res) => {
     const num = Math.floor(Math.random() * 10) + 1;
-    res.render('random', { rand: num }); // {rand: num}객체는 템플릿(random.ejs)으로 전달됨
+    res.render('random', { num }); // {rand: num}객체는 템플릿(random.ejs)으로 전달됨
 }); // rand라는 변수에 접근이 가능함
-*/
 
 // 355.subreddit template demo
+/*
 app.get('/r/:subreddit', (req, res) => {
     const { subreddit } = req.params;
     res.render('subreddit', { subreddit });
 });
+*/
 
 app.listen(3000, () => {
     console.log("Listening on port 3000");
