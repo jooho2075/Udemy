@@ -2,10 +2,13 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const { v4: uuid } = require('uuid'); // UUID
+const methodOverride = require('method-override'); // method-override
 
 app.use(express.urlencoded({ extended: true }));
 // GitBash 결과 : { meat: 'pork', quantity: '1' }
 app.use(express.json());
+app.use(methodOverride('_method'));
+
 app.set('views', path.join( __dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -54,6 +57,13 @@ app.get('/comments/:id', (req, res) => {
     const { id } = req.params;
     const comment = comments.find(c => c.id === id);
     res.render('comments/show', { comment });
+});
+
+// 374.Express 메서드 재정의
+app.get('/comments/:id/edit', (req, res) => {
+    const { id } = req.params;
+    const comment = comments.find(c => c.id === id);
+    res.render('comments/edit', { comment }); 
 });
 
 // 373.RESTful 주석 Update
