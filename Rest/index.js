@@ -56,6 +56,15 @@ app.get('/comments/:id', (req, res) => {
     res.render('comments/show', { comment });
 });
 
+// 373.RESTful 주석 Update
+app.patch('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    const newCommentText = req.body.comment; // URL에서 req.params인 ID를 가져온 후 req.body.comment에 담긴 payload를 가져옴
+    const foundComment = comments.find(c => c.id === id);
+    foundComment.comment = newCommentText;
+    res.redirect('/comments');
+});
+
 app.listen(3000, () => {
     console.log("on port 3000");
 });
