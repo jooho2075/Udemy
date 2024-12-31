@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const { v4: uuid } = require('uuid'); // UUID
 
 app.use(express.urlencoded({ extended: true }));
 // GitBash 결과 : { meat: 'pork', quantity: '1' }
@@ -10,22 +11,22 @@ app.set('view engine', 'ejs');
 
 const comments = [
     {
-        id: 1,
+        id: uuid(),
         username: 'A',
         comment: 'aaaaa'
     },
     {
-        id: 2,
+        id: uuid(),
         username: 'B',
         comment: 'bbbbb'
     },
     {
-        id: 3,
+        id: uuid(),
         username: 'C',
         comment: 'ccccc'
     },
     {
-        id: 4,
+        id: uuid(),
         username: 'D',
         comment: 'ddddd'
     }
@@ -45,13 +46,13 @@ app.get('/comments/new', (req, res) => { // form을 렌더링하는 /new 템플�
 // /comments의 Post라우트 -> 위의 form이 data를 제출하는 장소
 app.post('/comments', (req, res) => {
     const { username, comment } = req.body;
-    comments.push({ username, comment });
+    comments.push({ username, comment, id: uuid() });
     res.redirect('/comments');
 });
 
 app.get('/comments/:id', (req, res) => {
     const { id } = req.params;
-    const comment = comments.find(c => c.id === parseInt(id));
+    const comment = comments.find(c => c.id === id);
     res.render('comments/show', { comment });
 });
 
