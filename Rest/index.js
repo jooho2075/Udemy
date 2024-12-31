@@ -10,18 +10,22 @@ app.set('view engine', 'ejs');
 
 const comments = [
     {
+        id: 1,
         username: 'A',
         comment: 'aaaaa'
     },
     {
+        id: 2,
         username: 'B',
         comment: 'bbbbb'
     },
     {
+        id: 3,
         username: 'C',
         comment: 'ccccc'
     },
     {
+        id: 4,
         username: 'D',
         comment: 'ddddd'
     }
@@ -42,7 +46,13 @@ app.get('/comments/new', (req, res) => { // form을 렌더링하는 /new 템플�
 app.post('/comments', (req, res) => {
     const { username, comment } = req.body;
     comments.push({ username, comment });
-    res.send('/comments');
+    res.redirect('/comments');
+});
+
+app.get('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    const comment = comments.find(c => c.id === parseInt(id));
+    res.render('comments/show', { comment });
 });
 
 app.listen(3000, () => {
