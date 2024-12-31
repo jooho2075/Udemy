@@ -12,7 +12,7 @@ app.use(methodOverride('_method'));
 app.set('views', path.join( __dirname, 'views'));
 app.set('view engine', 'ejs');
 
-const comments = [
+let comments = [
     {
         id: uuid(),
         username: 'A',
@@ -72,6 +72,13 @@ app.patch('/comments/:id', (req, res) => {
     const newCommentText = req.body.comment; // URL에서 req.params인 ID를 가져온 후 req.body.comment에 담긴 payload를 가져옴
     const foundComment = comments.find(c => c.id === id);
     foundComment.comment = newCommentText;
+    res.redirect('/comments');
+});
+
+// 375.RESTful 주석 Delete
+app.delete('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    comments = comments.filter(c => c.id !== id); // callback 함수
     res.redirect('/comments');
 });
 
