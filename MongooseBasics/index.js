@@ -27,4 +27,17 @@ const movieSchema = new mongoose.Schema({ // Schema정의는 DB에 영향을 주
 
 // Movie라는 Model class 생성
 const Movie = mongoose.model('Movie', movieSchema); // 첫 번째 인수는 단수형이면서 대문자로 작성
-const amadeus =  new Movie({ title: 'Amadeus', year: 1986, score: 9.2, rating: 'R'});
+// const amadeus =  new Movie({ title: 'Amadeus', year: 1986, score: 9.2, rating: 'R'});
+
+// 396.대량 삽입하기
+Movie.insertMany([
+    { title: 'Amelie', year: 2001, score: 8.3, rating: 'R' },
+    { title: 'Alien', year: 1979, score: 8.1, rating: 'R' },
+    { title: 'The Iron Giant', year: 1999, score: 7.5, rating: 'PG' },
+    { title: 'Stand by Me', year: 1986, score: 8.6, rating: 'R' },
+    { title: 'Moonrise Kingdom', year: 2012, score: 7.3, rating: 'PG-13'}
+])
+    .then(data => {
+        console.log("It worked");
+        console.log(data);
+    })
