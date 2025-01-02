@@ -16,3 +16,15 @@ db.once('open', function() { // connection에 성공한 경우
     console.log("connection open");
 });
 */
+
+// 395. 첫번째 Mongoose 모델
+const movieSchema = new mongoose.Schema({ // Schema정의는 DB에 영향을 주지 않음
+    title: String,
+    year: Number,
+    score: Number,
+    rating: String
+});
+
+// Movie라는 Model class 생성
+const Movie = mongoose.model('Movie', movieSchema); // 첫 번째 인수는 단수형이면서 대문자로 작성
+const amadeus =  new Movie({ title: 'Amadeus', year: 1986, score: 9.2, rating: 'R'});
