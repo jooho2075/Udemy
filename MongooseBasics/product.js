@@ -59,9 +59,14 @@ mongoose.connect('mongodb://127.0.0.1:27017/shopApp')
         return this.save();
     }
 
+    // 405.Static Method(정적 메소드) 추가하기
     productSchema.methods.addCategory = function(newCat) {
         this.categories.push(newCat);
         return this.save();
+    }
+ 
+    productSchema.statics.fireSale = function() {
+        return this.updateMany({}, { onSale: true, price: 0 })
     }
 
     const Product = mongoose.model('Product', productSchema);
@@ -76,7 +81,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/shopApp')
         console.log(foundProduct);
     }
 
-    findProduct();
+    Product.fireSale().then(res => console.log(res)); // 전체적인 Product 모델이랑 관련이 있음
+
+    //findProduct();
     
     /*
     const bike = new Product({ name: 'Cycling Jersey', price: 28.50, categories: ['Cycling'], size: 'XS' });
