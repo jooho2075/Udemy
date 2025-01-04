@@ -30,6 +30,7 @@ const Movie = mongoose.model('Movie', movieSchema); // 첫 번째 인수는 단�
 // const amadeus =  new Movie({ title: 'Amadeus', year: 1986, score: 9.2, rating: 'R'});
 
 // 396.대량 삽입하기
+/*
 Movie.insertMany([
     { title: 'Amelie', year: 2001, score: 8.3, rating: 'R' },
     { title: 'Alien', year: 1979, score: 8.1, rating: 'R' },
@@ -41,3 +42,5 @@ Movie.insertMany([
         console.log("It worked");
         console.log(data);
     })
+*/
+
