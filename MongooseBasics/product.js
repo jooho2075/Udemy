@@ -19,7 +19,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/shopApp')
         price: {
             type: Number,
             required: true,
-            min: 0
+            min: [0, 'Price must be positive']
         },
         // 401.추가 스키마 제약조건
         onSale: {
@@ -37,14 +37,17 @@ mongoose.connect('mongodb://127.0.0.1:27017/shopApp')
                 type: Number,
                 default: 0
             }
+        },
+        size: {
+            type: String,
+            enum: ['S', 'M', 'L']
         }
 
     });
 
     const Product = mongoose.model('Product', productSchema);
 
-    const bike = new Product({ name: 'Tire Pump', price: 19.50, categories: ['Cycling'] });
-    /*
+    const bike = new Product({ name: 'Cycling Jersey', price: 28.50, categories: ['Cycling'], size: 'XS' });
     bike.save()
         .then(data => {
             console.log("It worked");
@@ -54,9 +57,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/shopApp')
             console.log("Error");
             console.log(err);
         })
-    */
-
+    
     // 402.Mongoose 업데이트 유효성 검사하기
+    /*
     Product.findOneAndUpdate({ name: 'Tire Pump' }, { price: -100 }, { new: true, runValidators: true })
     // new:true -> 새 데이터를 보여주게 함
         .then(data => {
@@ -67,3 +70,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/shopApp')
             console.log("Oh... Error");
             console.log(err);
         })
+    */
+
+    
