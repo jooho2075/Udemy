@@ -45,8 +45,40 @@ mongoose.connect('mongodb://127.0.0.1:27017/shopApp')
 
     });
 
+    // 404.Instance Method
+    /*
+    productSchema.methods.greet = function() {
+        console.log("Hello");
+        console.log(`- from ${this.name}`); // this -> 개별 인스턴스를 가리킴(여기서는 foundProduct)
+    }
+    */
+
+    // 특정 Product에 대한 onSale 특성을 토글하는 method
+    productSchema.methods.toggleOnSale = function() {
+        this.onSale = !this.onSale;
+        return this.save();
+    }
+
+    productSchema.methods.addCategory = function(newCat) {
+        this.categories.push(newCat);
+        return this.save();
+    }
+
     const Product = mongoose.model('Product', productSchema);
 
+    const findProduct = async () => {
+        const foundProduct = await Product.findOne({ name: 'Mountain Bike' });
+        //foundProduct.greet();
+        console.log(foundProduct);
+        await foundProduct.toggleOnSale();
+        console.log(foundProduct);
+        await foundProduct.addCategory('Outdoors');
+        console.log(foundProduct);
+    }
+
+    findProduct();
+    
+    /*
     const bike = new Product({ name: 'Cycling Jersey', price: 28.50, categories: ['Cycling'], size: 'XS' });
     bike.save()
         .then(data => {
@@ -57,7 +89,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/shopApp')
             console.log("Error");
             console.log(err);
         })
-    
+    */
+
     // 402.Mongoose 업데이트 유효성 검사하기
     /*
     Product.findOneAndUpdate({ name: 'Tire Pump' }, { price: -100 }, { new: true, runValidators: true })
