@@ -3,9 +3,11 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/shopApp')
+const Product = require('./models/product'); // 연결을 위한 모델 요청
+
+mongoose.connect('mongodb://127.0.0.1:27017/farmStand') // 주소는 localhost 대신 127.0.0.1로 입력하기
     .then(() => {
-        console.log("Mongo connection Open");
+        console.log("Mongo Connection Open");
     })
     .catch(err => {
         console.log("Oh... Mongo Connection Error");
