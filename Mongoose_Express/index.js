@@ -22,6 +22,12 @@ app.get('/products', async (req, res) => { // 라우트를 위한 비동기 콜�
     res.render('products/index', { products });
 });
 
+app.get('/products/:id', async(req, res) => {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    res.render('products/show', { product });
+}); // get 라우트
+
 app.listen(3000, () => {
     console.log("App is listening on port 3000");
 });
