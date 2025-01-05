@@ -57,6 +57,12 @@ app.put('/products/:id', async(req, res) => { // 상품 업데이트 로직
     res.redirect(`/products/${product._id}`); // Mongoose로부터 실제 정보를 받았을 때만 동작함
 });
 
+app.delete('/products/:id', async (req, res) => {
+    const { id } = req.params;
+    const deletedProduct = await Product.findByIdAndDelete(id);
+    res.redirect('/products');
+});
+
 app.listen(3000, () => {
     console.log("App is listening on port 3000");
 });
