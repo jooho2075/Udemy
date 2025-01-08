@@ -1,3 +1,8 @@
-export default function Greeter({ person }) {
-    return <h1>Hello, {person}</h1>
+export default function Greeter({ person, from }) {
+    return (
+        <>
+            <h1>Hello, {person}</h1>
+            <h2>from {from}</h2>
+        </>
+    );
 }
