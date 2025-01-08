@@ -1,7 +1,8 @@
 import './App.css'
 // import Greeter from "./Greeter";
 // import Die from "./Die";
-import ListPicker from './ListPicker';
+//import ListPicker from './ListPicker';
+import DoubleDice from './DoubleDice';
 
 function App() {
   return (
@@ -15,8 +16,14 @@ function App() {
       <Die />
       <Die numSides={10}/> 
       */}
+
+      {/* 
       <ListPicker values={[1,2,3,4,5]}/>
       <ListPicker values={["a", "b", "c"]}/>
+       */}
+      <DoubleDice />
+      <DoubleDice />
+      <DoubleDice />      
     </div>
   );
 }
