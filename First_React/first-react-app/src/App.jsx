@@ -1,12 +1,12 @@
 import './App.css'
-import Chicken from "./Chicken";
+import Greeter from "./Greeter"
 
 function App() {
   return (
     <div>
-      <Chicken />
-      <Chicken />
-      <Chicken />
+      <Greeter person="Park"/>
+      <Greeter person="Kim"/>
+      <Greeter person="Lee"/>
     </div>
   );
 }
