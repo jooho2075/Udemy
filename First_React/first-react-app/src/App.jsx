@@ -2,9 +2,10 @@ import './App.css'
 // import Greeter from "./Greeter";
 // import Die from "./Die";
 //import ListPicker from './ListPicker';
-import DoubleDice from './DoubleDice';
-import Heading from './Heading';
-import ColorList from './ColorList';
+// import DoubleDice from './DoubleDice';
+// import Heading from './Heading';
+// import ColorList from './ColorList';
+import Slots from './Slots';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <ListPicker values={["a", "b", "c"]}/>
        */}
 
+      {/* 
       <Heading color='magenta' text={"Welcome!!"} fontSize="20px" />
       <Heading color='teal' text={"Welcome!!"} fontSize="48px" />
 
@@ -32,7 +34,10 @@ function App() {
       <DoubleDice />
 
       <ColorList colors={["red", "pink", "purple", "teal"]} />
-      <ColorList colors={["olive", "orangered", "slategrey"]} />   
+      <ColorList colors={["olive", "orangered", "slategrey"]} />    
+      */}
+      <Slots />
+      <Slots />
     </div>
   );
 }
