@@ -3,6 +3,7 @@ import './App.css'
 // import Die from "./Die";
 //import ListPicker from './ListPicker';
 import DoubleDice from './DoubleDice';
+import Heading from './Heading';
 
 function App() {
   return (
@@ -21,9 +22,13 @@ function App() {
       <ListPicker values={[1,2,3,4,5]}/>
       <ListPicker values={["a", "b", "c"]}/>
        */}
+
+      <Heading color='magenta' text={"Welcome!!"} fontSize="20px" />
+      <Heading color='teal' text={"Welcome!!"} fontSize="48px" />
+
       <DoubleDice />
       <DoubleDice />
-      <DoubleDice />      
+      <DoubleDice />    
     </div>
   );
 }
