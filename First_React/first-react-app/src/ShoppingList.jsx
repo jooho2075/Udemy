@@ -1,14 +1,17 @@
+import ShoppingListItem from "./ShoppingListItem";
+
 function ShoppingList({items}) {
     return(
         <ul>
             {items.map((i) => (
-                <li 
+                <ShoppingListItem
                     key={i.id}
-                    style={{
-                        color: i.completed ? "grey" : "red",
-                        textDecoration: i.completed ? "line-through" : "none"}}>
-                        {i.item} - {i.quantity}
-                </li>
+                    item={i.item} 
+                    quantity={i.quantity} 
+                    completed={i.completed}
+                />
+                // 전개연산자 , 위와 같은 의미
+                //<ShoppingListItem key={i.id} {...} />
             ))}
         </ul>
     );
