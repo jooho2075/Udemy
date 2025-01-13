@@ -5,7 +5,15 @@ import './App.css'
 // import DoubleDice from './DoubleDice';
 // import Heading from './Heading';
 // import ColorList from './ColorList';
-import Slots from './Slots';
+// import Slots from './Slots';
+import ShoppingList from './ShoppingList';
+
+const data = [
+  {item: 'eggs', quantity: 12, completed: false},
+  {item: 'milk', quantity: 1, completed: true},
+  {item: 'chicken breast', quantity: 4, completed: false},
+  {item: 'carrot', quantity: 6, completed: true},
+]
 
 function App() {
   return (
@@ -36,8 +44,13 @@ function App() {
       <ColorList colors={["red", "pink", "purple", "teal"]} />
       <ColorList colors={["olive", "orangered", "slategrey"]} />    
       */}
+
+      {/* 
       <Slots />
-      <Slots />
+      <Slots /> 
+      */}
+
+      <ShoppingList items={data}/>
     </div>
   );
 }
