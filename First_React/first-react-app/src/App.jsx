@@ -7,6 +7,7 @@ import './App.css'
 // import ColorList from './ColorList';
 // import Slots from './Slots';
 // import ShoppingList from './ShoppingList';
+import Clicker from './Clicker';
 
 /*
 const data = [
@@ -18,6 +19,7 @@ const data = [
 */
 
 // 627. 숙박시설 예제
+/*
 import PropertyList from './PropertyList';
 
 const properties = [
@@ -28,6 +30,7 @@ const properties = [
   { id: 129034, name: "OceanView Condo", rating: 4.7, price: 140},
   { id: 129035, name: "Gold Miner Campground", rating: 4.69, price: 96},
 ]
+*/
 
 function App() {
   return (
@@ -69,7 +72,9 @@ function App() {
        */}
 
     {/* // 627. 숙박시설 예제 */}
-    <PropertyList properties={properties}/>
+    {/* <PropertyList properties={properties}/> */}
+
+    <Clicker />
     </div>
   );
 }
