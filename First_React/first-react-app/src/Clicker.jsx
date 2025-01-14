@@ -1,3 +1,4 @@
+/*
 function handleClick() {
     console.log("Clicked the Button");
 }
@@ -5,13 +6,22 @@ function handleClick() {
 function handleHover() {
     console.log("Hover the Mosue");
 }
+*/
 
-function Clicker() {
+// 634.Clicker 예제
+
+function Clicker({ clickMessage, nonClickMessage, clickText, nonClickText }) {
     return(
         <div>
+            {/* 
             <p>Click the Button</p>
             <button onClick={handleClick}>Click</button>
-            <p onMouseOver={handleHover}>Hover Over Me</p>
+            <p onMouseOver={handleHover}>Hover Over Me</p> 
+            */}
+
+            {/* 634.Clicker 예제 */}
+            <button onClick={() => alert(clickMessage)}>{clickText}</button>
+            <button onClick={() => alert(nonClickMessage)}>{nonClickText}</button>
         </div>
     );
 }

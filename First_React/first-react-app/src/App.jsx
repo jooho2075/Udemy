@@ -74,9 +74,15 @@ function App() {
 
     {/* // 627. 숙박시설 예제 */}
     {/* <PropertyList properties={properties}/> */}
-
+    
+    {/* 
     <Clicker />
-    <Form />
+    <Form /> 
+    */}
+
+    {/* 634.Clicker 예제 */}
+    <Clicker clickMessage="Hi" clickText="Please Click Me"/>
+    <Clicker nonClickMessage="Please Stop Clicking me" nonClickText="Do not Click"/>
     </div>
   );
 }
