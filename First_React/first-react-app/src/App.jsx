@@ -8,6 +8,7 @@ import './App.css'
 // import Slots from './Slots';
 // import ShoppingList from './ShoppingList';
 import Clicker from './Clicker';
+import Form from './Form';
 
 /*
 const data = [
@@ -75,6 +76,7 @@ function App() {
     {/* <PropertyList properties={properties}/> */}
 
     <Clicker />
+    <Form />
     </div>
   );
 }
