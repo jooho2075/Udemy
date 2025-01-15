@@ -11,7 +11,7 @@ import './App.css'
 // import Form from './Form';
 // import Counter from './Counter';
 // import Toggler from './Toggler';
-import ToggleCounter from './ToggleCounter';
+// import ToggleCounter from './ToggleCounter';
 
 /*
 const data = [
@@ -89,11 +89,11 @@ function App() {
       <Clicker nonClickMessage="Please Stop Clicking me" nonClickText="Do not Click"/> 
       */}
 
-      {/* <Counter /> */}
+      <Counter />
 
       {/* <Toggler /> */}
 
-      <ToggleCounter />
+      {/* <ToggleCounter /> */}
     </div>
   );
 }
