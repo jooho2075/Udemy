@@ -9,7 +9,8 @@ import './App.css'
 // import ShoppingList from './ShoppingList';
 // import Clicker from './Clicker';
 // import Form from './Form';
-import Counter from './Counter';
+// import Counter from './Counter';
+import Toggler from './Toggler';
 
 /*
 const data = [
@@ -86,7 +87,10 @@ function App() {
       <Clicker clickMessage="Hi" clickText="Please Click Me"/>
       <Clicker nonClickMessage="Please Stop Clicking me" nonClickText="Do not Click"/> 
       */}
-      <Counter />
+
+      {/* <Counter /> */}
+
+      <Toggler />
     </div>
   );
 }
