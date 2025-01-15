@@ -7,8 +7,9 @@ import './App.css'
 // import ColorList from './ColorList';
 // import Slots from './Slots';
 // import ShoppingList from './ShoppingList';
-import Clicker from './Clicker';
-import Form from './Form';
+// import Clicker from './Clicker';
+// import Form from './Form';
+import Counter from './Counter';
 
 /*
 const data = [
@@ -72,17 +73,20 @@ function App() {
       <ShoppingList items={data}/>
        */}
 
-    {/* // 627. 숙박시설 예제 */}
-    {/* <PropertyList properties={properties}/> */}
+      {/* // 627. 숙박시설 예제 */}
+      {/* <PropertyList properties={properties}/> */}
     
-    {/* 
-    <Clicker />
-    <Form /> 
-    */}
+      {/* 
+      <Clicker />
+      <Form /> 
+      */}
 
-    {/* 634.Clicker 예제 */}
-    <Clicker clickMessage="Hi" clickText="Please Click Me"/>
-    <Clicker nonClickMessage="Please Stop Clicking me" nonClickText="Do not Click"/>
+      {/* 634.Clicker 예제 */}
+      {/* 
+      <Clicker clickMessage="Hi" clickText="Please Click Me"/>
+      <Clicker nonClickMessage="Please Stop Clicking me" nonClickText="Do not Click"/> 
+      */}
+      <Counter />
     </div>
   );
 }
