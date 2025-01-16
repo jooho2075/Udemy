@@ -12,6 +12,8 @@ import './App.css'
 // import Counter from './Counter';
 // import Toggler from './Toggler';
 // import ToggleCounter from './ToggleCounter';
+// import ColorBox from './ColorBoxes';
+import ColorBoxGrid from './ColorBoxGrid';
 
 /*
 const data = [
@@ -37,6 +39,7 @@ const properties = [
 */
 
 function App() {
+  const colors = ["red", "orange", "yellow", "green", "blue", "darkblue", "purple"];
   return (
     <div>
       {/*
@@ -89,11 +92,17 @@ function App() {
       <Clicker nonClickMessage="Please Stop Clicking me" nonClickText="Do not Click"/> 
       */}
 
-      <Counter />
+      {/* <Counter /> */}
 
       {/* <Toggler /> */}
 
       {/* <ToggleCounter /> */}
+
+      {/* ColorBox 예제 */}
+
+      {/* <ColorBox colors={colors}/> */}
+
+      <ColorBoxGrid colors={colors}/>
     </div>
   );
 }
