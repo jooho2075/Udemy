@@ -11,12 +11,22 @@ export default function EmojiClicker() {
     const addEmoji = () => {
         setEmojies(oldEmojies => [...oldEmojies, { id: uuid(), emoji: randomEmoji() }]);
     };
+
     const deleteEmoji = (id) => {
         // 단계1.delete the emoji with the specified id(특정 아이디로 Emoji 삭제)
         setEmojies(prevEmojies => {
             return prevEmojies.filter(e => e.id !== id);    
         })
     };
+
+    const makeEverythingA = () => {
+        setEmojies((prevEmojies) => {
+            return prevEmojies.map((e) => {
+                return {...e, emoji: "A"}; // 원본은 유지하되 emoji 프로퍼티 자체만 바꾸게 됨
+            });
+        });
+    };
+
     return (
         <div>
             {emojies.map((e) => (
@@ -28,7 +38,9 @@ export default function EmojiClicker() {
                         {e.emoji}
                 </span>
             ))}
-            <button onClick={addEmoji }>Add Emoji</button>
+            <br />
+            <button onClick={addEmoji }>Add Emoji</button><br />
+            <button onClick={makeEverythingA}>Make them all A</button>
         </div>
     );
 }
