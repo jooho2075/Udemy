@@ -1,5 +1,7 @@
 import './App.css'
-import BetterSignupForm from './BetterSignupForm';
+// import ShoppingListForm from './ShoppingListForm';
+import ShoppingList from "./ShoppingList";
+// import BetterSignupForm from './BetterSignupForm';
 // import SignupForm from './SignupForm';
 // import UsernameForm from './UsernameForm'
 
@@ -8,7 +10,8 @@ function App() {
     <>
       {/* <UsernameForm /> */}
       {/* <SignupForm /> */}
-      <BetterSignupForm />
+      {/* <BetterSignupForm /> */}
+      <ShoppingList />
     </>
   );
 }
