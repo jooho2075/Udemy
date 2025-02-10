@@ -1,13 +1,15 @@
 import './App.css'
-import QuoteFetcherLoader from './QuoteFetcherLoader';
+import ProfileViewerWithSearch from './ProfileViewerWithSearch';
+// import QuoteFetcherLoader from './QuoteFetcherLoader';
 // import QuoteFetcher from './QuoteFetcher';
-//import Counter from './counter';
+// import Counter from './counter';
 
 function App() {
   return(
     // <Counter />
     // <QuoteFetcher />
-    <QuoteFetcherLoader />
+    // <QuoteFetcherLoader />
+    <ProfileViewerWithSearch />
   );
 }
 
