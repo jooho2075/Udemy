@@ -1,11 +1,13 @@
 import './App.css'
-import QuoteFetcher from './QuoteFetcher';
+import QuoteFetcherLoader from './QuoteFetcherLoader';
+// import QuoteFetcher from './QuoteFetcher';
 //import Counter from './counter';
 
 function App() {
   return(
     // <Counter />
-    <QuoteFetcher />
+    // <QuoteFetcher />
+    <QuoteFetcherLoader />
   );
 }
 
