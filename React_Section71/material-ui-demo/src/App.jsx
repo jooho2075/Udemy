@@ -1,5 +1,6 @@
 // import { IconButton } from '@mui/material';
 import './App.css'
+import FormDemo from './FormDemo';
 // import Button from '@mui/material/Button';
 // import AlarmIcon from '@mui/icons-material/Alarm';
 import RatingDemo from './RatingDemo';
@@ -18,6 +19,7 @@ function App() {
       */}
 
       <RatingDemo />
+      <FormDemo />
     </div>
   );
 }
