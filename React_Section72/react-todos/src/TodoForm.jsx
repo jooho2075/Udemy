@@ -1,8 +1,8 @@
 import ListItem from "@mui/material/ListItem";
 import TextField from "@mui/material/TextField";
+import Create from "@mui/icons-material/Create";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
-import Create from "@mui/icons-material/Create";
 
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ function TodoForm({ addTodo }) {
             <form onSubmit={handleSubmit}>
                 <TextField 
                     id="outlined-basic" 
-                    label="Outlined" 
+                    label="Add Todo"
                     variant="outlined"
                     onChange={handleChange}
                     value={text}
