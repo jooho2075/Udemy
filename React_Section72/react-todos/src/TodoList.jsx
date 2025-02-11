@@ -12,9 +12,21 @@ const initialTodos = [
 function TodoList() {
     const [todos, setTodos] = useState(initialTodos);
 
-    const remove = (id) => {
+    const removeTodo = (id) => {
         setTodos((prevTodos) => {
             return prevTodos.filter(t => t.id !== id);
+        })
+    };
+
+    const toggleTodo = (id) => {
+        setTodos(prevTodos => {
+            return prevTodos.map(todo => {
+                if(todo.id === id) {
+                    return {...todo, completed: !todo.completed}
+                } else {
+                    return todo;
+                }
+            })
         })
     };
 
@@ -24,7 +36,8 @@ function TodoList() {
                 <TodoItem 
                     todo={todo} 
                     key={todo.id} 
-                    removeTodo={() => remove(todo.id)} 
+                    remove={removeTodo} 
+                    toggle={() => toggleTodo(todo.id)}
                 />
             ))}
         </List>
