@@ -5,8 +5,16 @@
 // console.log(apiKey);
 
 // function
+/*
 function greet() {
     console.log("Hello!");
 }
 
 greet();
+*/
+
+// arrow function
+export default (userName, message) => {
+    console.log("Hello");
+    return userName + message;
+}
