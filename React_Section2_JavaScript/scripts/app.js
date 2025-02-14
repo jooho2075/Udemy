@@ -38,3 +38,15 @@ console.log(user);
 console.log(user.name);
 */
 
+// Array(배열)
+const hobbies = ["sport", "cooking", "reading"];
+console.log(hobbies[0]);
+
+hobbies.push("working");
+console.log(hobbies);
+
+const index = hobbies.findIndex((item) => item === "sports");
+console.log(index);
+
+const editedHobbies = hobbies.map((item) => item + "!");
+console.log(editedHobbies);
