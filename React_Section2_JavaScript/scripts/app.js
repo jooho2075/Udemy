@@ -14,7 +14,27 @@ greet();
 */
 
 // arrow function
+/*
 export default (userName, message) => {
     console.log("Hello");
     return userName + message;
 }
+*/
+
+// Object
+/*
+const userName = "Max";
+const userAge = 20;
+*/
+
+// 위와 같은 의미
+/*
+const user = {
+    name: 'Max',
+    age: 20
+}
+
+console.log(user);
+console.log(user.name);
+*/
+
