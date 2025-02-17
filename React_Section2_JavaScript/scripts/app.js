@@ -100,6 +100,7 @@ console.log(extendedUser);
 */
 
 // 함수를 값으로 사용하기
+/*
 function handleTimeout() {
     console.log("Timed out");
 }
@@ -109,3 +110,11 @@ const handleTimeout2 = () => {
 
 setTimeout(handleTimeout, 2000);
 setTimeout(handleTimeout2, 3000);
+*/
+
+// 참조형과 기본값 비교
+let userMessage = 'Hello'; // 기본형 값
+const hobbies = ["sports", "cooking"];
+
+hobbies.push("working");
+console.log(hobbies);
