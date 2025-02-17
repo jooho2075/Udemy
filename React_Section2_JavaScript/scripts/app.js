@@ -39,6 +39,7 @@ console.log(user.name);
 */
 
 // Array(배열)
+/*
 const hobbies = ["sport", "cooking", "reading"];
 console.log(hobbies[0]);
 
@@ -50,3 +51,28 @@ console.log(index);
 
 const editedHobbies = hobbies.map((item) => item + "!");
 console.log(editedHobbies);
+*/
+
+// Desctructuring
+/*
+const userNameData = ["Park", "JooHo"];
+
+const firstName = userNameData[0];
+const lastName = userNameData[1];
+*/
+
+// 위와 같은 의미
+/*
+const [firstName, lastName] = ["Park", "JooHo"];
+
+console.log(firstName);
+console.log(lastName);
+*/
+
+const {name: userName, age} = {
+    name: "Max",
+    age: 34
+};
+
+console.log(userName);
+console.log(age);
