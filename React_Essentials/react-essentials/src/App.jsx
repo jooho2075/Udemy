@@ -1,4 +1,5 @@
 import './App.css'
+import reactImg from "./assets/react.svg"; // image loading 방법
 
 const reactDescription = ['Fundamental', 'Crucial', 'Core'];
 
@@ -12,6 +13,7 @@ function Header() {
 
     return (
     <header>
+        <img src={reactImg} alt="Stylized atom" /> {/* image loading 방법*/}
         <h1>React Essentials</h1>
         <p>
             {description} Reacct concepts you will need for almost any app you are
