@@ -69,6 +69,7 @@ console.log(firstName);
 console.log(lastName);
 */
 
+/*
 const {name: userName, age} = {
     name: "Max",
     age: 34
@@ -76,3 +77,22 @@ const {name: userName, age} = {
 
 console.log(userName);
 console.log(age);
+*/
+
+// 스프레드 연산자(spread operation)
+const hobbies = ["sports", "cooking"];
+const user = {
+    name: "Max", 
+    age: 34
+};
+
+const newHobbies = ["reading"];
+
+const mergeHobbies = [...hobbies, newHobbies];
+console.log(mergeHobbies);
+
+const extendedUser = {
+    isAdmin: true,
+    ...user
+};
+console.log(extendedUser);
