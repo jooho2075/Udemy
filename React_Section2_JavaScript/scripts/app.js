@@ -80,6 +80,7 @@ console.log(age);
 */
 
 // 스프레드 연산자(spread operation)
+/*
 const hobbies = ["sports", "cooking"];
 const user = {
     name: "Max", 
@@ -96,3 +97,15 @@ const extendedUser = {
     ...user
 };
 console.log(extendedUser);
+*/
+
+// 함수를 값으로 사용하기
+function handleTimeout() {
+    console.log("Timed out");
+}
+const handleTimeout2 = () => {
+    console.log("Timed out... again");
+};
+
+setTimeout(handleTimeout, 2000);
+setTimeout(handleTimeout2, 3000);
