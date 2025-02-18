@@ -41,10 +41,26 @@ function App() {
                     <menu>
                         {/* Component 합성 */}
                         {/* handleSelect를 실행하는 대신 이 화살표 함수를 onSelect에 실행하는 방식 */}
-                        <TabButton onSelect={() => handleSelect('components')}>Components</TabButton>
-                        <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
-                        <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
-                        <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
+                        <TabButton 
+                            isSelected={selectedTopic === 'components'} 
+                            onSelect={() => handleSelect('components')}>
+                                Components
+                        </TabButton>
+                        <TabButton 
+                            isSelected={selectedTopic === 'jsx'} 
+                            onSelect={() => handleSelect('jsx')}>
+                                JSX
+                        </TabButton>
+                        <TabButton
+                            isSelected={selectedTopic === 'props'} 
+                            onSelect={() => handleSelect('props')}>
+                                Props
+                        </TabButton>
+                        <TabButton 
+                            isSelected={selectedTopic === 'state'} 
+                            onSelect={() => handleSelect('state')}>
+                                State
+                        </TabButton>
 
                         {/* 위와 동일한 방법*/}
                         {/* <TabButton label='Components' /> */}
