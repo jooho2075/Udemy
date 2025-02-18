@@ -49,6 +49,7 @@ function App() {
                         {/* 위와 동일한 방법*/}
                         {/* <TabButton label='Components' /> */}
                     </menu>
+                    {/* 조건적 컨텐츠 렌더링 */}
                     {!selectedTopic ? <p>Please select a topic</p> : null}
 
                     {/* 위와 같은 의미(좀 더 코드가 간결해지고 이해하기 쉬워짐) */}
