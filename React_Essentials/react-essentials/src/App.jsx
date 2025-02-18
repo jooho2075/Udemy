@@ -6,10 +6,15 @@ import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
+    let tabContent = 'Please click a button';
+
     const handleSelect = (selectedButton) => {
         // selectedButton => 'component', 'jsx', 'props', 'state' : selectedButton이라는 매개변수에서 받는 4개의 변수
-        console.log(selectedButton);
+        tabContent = selectedButton;
+        console.log(tabContent);
     };
+
+    console.log("App Component Executing");
 
     return (
         <div>
@@ -41,7 +46,7 @@ function App() {
                         {/* 위와 동일한 방법*/}
                         {/* <TabButton label='Components' /> */}
                     </menu>
-                    Dynamic Content
+                    {tabContent}
                 </section>
             </main>
         </div>
