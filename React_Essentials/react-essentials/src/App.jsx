@@ -6,8 +6,9 @@ import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
-    const handleSelect = () => {
-        console.log("Hello World - selected");
+    const handleSelect = (selectedButton) => {
+        // selectedButton => 'component', 'jsx', 'props', 'state' : selectedButton이라는 매개변수에서 받는 4개의 변수
+        console.log(selectedButton);
     };
 
     return (
@@ -31,10 +32,11 @@ function App() {
                     <h1>Examples</h1>
                     <menu>
                         {/* Component 합성 */}
-                        <TabButton onSelect={handleSelect}>Components</TabButton>
-                        <TabButton onSelect={handleSelect}>JSX</TabButton>
-                        <TabButton onSelect={handleSelect}>Props</TabButton>
-                        <TabButton onSelect={handleSelect}>State</TabButton>
+                        {/* handleSelect를 실행하는 대신 이 화살표 함수를 onSelect에 실행하는 방식 */}
+                        <TabButton onSelect={() => handleSelect('components')}>Components</TabButton>
+                        <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
+                        <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
+                        <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
 
                         {/* 위와 동일한 방법*/}
                         {/* <TabButton label='Components' /> */}
