@@ -3,6 +3,7 @@ import './App.css'
 import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
+import TabButton from './components/TabButton.jsx';
 
 function App() {
     return (
@@ -21,6 +22,19 @@ function App() {
                         <CoreConcept {...CORE_CONCEPTS[2]} />
                         <CoreConcept {...CORE_CONCEPTS[3]} />
                     </ul>
+                </section>
+                <section id="examples">
+                    <h1>Examples</h1>
+                    <menu>
+                        {/* Component 합성 */}
+                        <TabButton>Components</TabButton>
+                        <TabButton>JSX</TabButton>
+                        <TabButton>Props</TabButton>
+                        <TabButton>State</TabButton>
+
+                        {/* 위와 동일한 방법*/}
+                        {/* <TabButton label='Components' /> */}
+                    </menu>
                 </section>
             </main>
         </div>
