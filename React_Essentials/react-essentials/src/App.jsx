@@ -9,7 +9,7 @@ import TabButton from './components/TabButton.jsx';
 import { EXAMPLES } from './data.js';
 
 function App() {
-    const [selectedTopic, setSelectedTopic] = useState('components');
+    const [selectedTopic, setSelectedTopic] = useState();
 
     const handleSelect = (selectedButton) => {
         // selectedButton => 'component', 'jsx', 'props', 'state' : selectedButton이라는 매개변수에서 받는 4개의 변수
@@ -49,15 +49,22 @@ function App() {
                         {/* 위와 동일한 방법*/}
                         {/* <TabButton label='Components' /> */}
                     </menu>
-                    <div id="tab-content">
-                        <h3>{EXAMPLES[selectedTopic].title}</h3>
-                        <p>{EXAMPLES[selectedTopic].description}</p>
-                        <pre>
-                            <code>
-                            {EXAMPLES[selectedTopic].code}
-                            </code>
-                        </pre>
-                    </div>
+                    {!selectedTopic ? <p>Please select a topic</p> : null}
+
+                    {/* 위와 같은 의미(좀 더 코드가 간결해지고 이해하기 쉬워짐) */}
+                    {/* {!selectedTopic && <p>Please select a topic</p>} */}
+                    
+                    {selectedTopic ? (
+                        <div id="tab-content">
+                            <h3>{EXAMPLES[selectedTopic].title}</h3>
+                            <p>{EXAMPLES[selectedTopic].description}</p>
+                            <pre>
+                                <code>
+                                    {EXAMPLES[selectedTopic].code}
+                                </code>
+                            </pre>
+                        </div>
+                    ) : null}
                 </section>
             </main>
         </div>
