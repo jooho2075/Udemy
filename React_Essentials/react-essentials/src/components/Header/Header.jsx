@@ -1,4 +1,5 @@
-import reactImg from "../assets/react.svg"; // image loading 방법
+import reactImg from "../../assets/react.svg"; // image loading 방법
+import "./Header.css";
 
 const reactDescription = ['Fundamental', 'Crucial', 'Core'];
 
