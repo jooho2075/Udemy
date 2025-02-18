@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import './App.css'
 // import reactImg from "./assets/react.svg"; // image loading 방법
 import { CORE_CONCEPTS } from './data.js';
@@ -6,12 +8,12 @@ import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
-    let tabContent = 'Please click a button';
+    const [selectedTopic, setSelectedTopic] = useState('Please click a button');
 
     const handleSelect = (selectedButton) => {
         // selectedButton => 'component', 'jsx', 'props', 'state' : selectedButton이라는 매개변수에서 받는 4개의 변수
-        tabContent = selectedButton;
-        console.log(tabContent);
+        setSelectedTopic(selectedButton);
+        // console.log(selectedTopic);
     };
 
     console.log("App Component Executing");
@@ -46,7 +48,7 @@ function App() {
                         {/* 위와 동일한 방법*/}
                         {/* <TabButton label='Components' /> */}
                     </menu>
-                    {tabContent}
+                    {selectedTopic};
                 </section>
             </main>
         </div>
