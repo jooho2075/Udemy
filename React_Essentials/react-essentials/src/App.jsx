@@ -1,5 +1,6 @@
 import './App.css'
 import reactImg from "./assets/react.svg"; // image loading 방법
+import { CORE_CONCEPTS } from './data.js';
 
 const reactDescription = ['Fundamental', 'Crucial', 'Core'];
 
@@ -23,12 +24,35 @@ function Header() {
     );
 }
 
+// Prop(속성)으로 Component 재사용
+function CoreConcept({image, title, description}) {
+    return (
+        <li>
+            <img src={image} alt={title} />
+            <h3>{title}</h3>
+            <p>{description}</p>
+        </li>
+    );
+}
+
 function App() {
     return (
         <div>
             <Header></Header>
             <main>
-                <h2>Time to get started</h2>
+                <section id="core-concepts">
+                    <h2>Core Concepts</h2>
+                    <ul>
+                        <CoreConcept 
+                            title={CORE_CONCEPTS[0].title} 
+                            description={CORE_CONCEPTS[0].description}
+                            image={CORE_CONCEPTS[0].image}   
+                        />
+                        <CoreConcept {...CORE_CONCEPTS[1] }/> {/* 이 방법과 위의 방법 두 가지 방법이 있음, 결과는 동일함*/}
+                        <CoreConcept {...CORE_CONCEPTS[2]} />
+                        <CoreConcept {...CORE_CONCEPTS[3]} />
+                    </ul>
+                </section>
             </main>
         </div>
     );
