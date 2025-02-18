@@ -6,6 +6,10 @@ import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
+    const handleSelect = () => {
+        console.log("Hello World - selected");
+    };
+
     return (
         <div>
             <Header></Header>
@@ -27,14 +31,15 @@ function App() {
                     <h1>Examples</h1>
                     <menu>
                         {/* Component 합성 */}
-                        <TabButton>Components</TabButton>
-                        <TabButton>JSX</TabButton>
-                        <TabButton>Props</TabButton>
-                        <TabButton>State</TabButton>
+                        <TabButton onSelect={handleSelect}>Components</TabButton>
+                        <TabButton onSelect={handleSelect}>JSX</TabButton>
+                        <TabButton onSelect={handleSelect}>Props</TabButton>
+                        <TabButton onSelect={handleSelect}>State</TabButton>
 
                         {/* 위와 동일한 방법*/}
                         {/* <TabButton label='Components' /> */}
                     </menu>
+                    Dynamic Content
                 </section>
             </main>
         </div>
