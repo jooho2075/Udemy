@@ -1,39 +1,8 @@
 import './App.css'
-import reactImg from "./assets/react.svg"; // image loading 방법
+// import reactImg from "./assets/react.svg"; // image loading 방법
 import { CORE_CONCEPTS } from './data.js';
-
-const reactDescription = ['Fundamental', 'Crucial', 'Core'];
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * (max + 1));
-}
-
-// 동적값 출력 및 활용
-function Header() {
-    const description = reactDescription[getRandomInt(2)];
-
-    return (
-    <header>
-        <img src={reactImg} alt="Stylized atom" /> {/* image loading 방법*/}
-        <h1>React Essentials</h1>
-        <p>
-            {description} Reacct concepts you will need for almost any app you are
-            going to build!
-        </p>
-    </header>
-    );
-}
-
-// Prop(속성)으로 Component 재사용
-function CoreConcept({image, title, description}) {
-    return (
-        <li>
-            <img src={image} alt={title} />
-            <h3>{title}</h3>
-            <p>{description}</p>
-        </li>
-    );
-}
+import Header from './components/Header.jsx';
+import CoreConcept from './components/CoreConcept.jsx';
 
 function App() {
     return (
