@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 
 import './App.css'
 // import reactImg from "./assets/react.svg"; // image loading 방법
@@ -20,7 +20,7 @@ function App() {
     console.log("App Component Executing");
 
     return (
-        <div>
+        <Fragment>
             <Header></Header>
             <main>
                 <section id="core-concepts">
@@ -94,7 +94,7 @@ function App() {
                     ) : null}
                 </section>
             </main>
-        </div>
+        </Fragment>
     );
 }
 
