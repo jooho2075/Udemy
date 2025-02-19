@@ -1,100 +1,20 @@
-import { useState, Fragment } from 'react';
-
 import './App.css'
 // import reactImg from "./assets/react.svg"; // image loading 방법
-import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header/Header.jsx';
-import CoreConcept from './components/CoreConcept.jsx';
-import TabButton from './components/TabButton.jsx';
-import { EXAMPLES } from './data.js';
+import CoreConcepts from './components/CoreConcepts.jsx';
+import Examples from './components/Examples.jsx';
 
 function App() {
-    const [selectedTopic, setSelectedTopic] = useState();
-
-    const handleSelect = (selectedButton) => {
-        // selectedButton => 'component', 'jsx', 'props', 'state' : selectedButton이라는 매개변수에서 받는 4개의 변수
-        setSelectedTopic(selectedButton);
-        // console.log(selectedTopic);
-    };
-
-    console.log("App Component Executing");
+    
 
     return (
-        <Fragment>
-            <Header></Header>
+        <>
+            <Header />
             <main>
-                <section id="core-concepts">
-                    <h2>Core Concepts</h2>
-                    <ul>
-                        {/* List 데이터의 동적 출력 */}
-                        {CORE_CONCEPTS.map((conceptItem) => (
-                            <CoreConcept key={conceptItem.title} {...conceptItem} />
-                        ))}
-                        
-                        {/* 
-                        <CoreConcept 
-                            title={CORE_CONCEPTS[0].title} 
-                            description={CORE_CONCEPTS[0].description}
-                            image={CORE_CONCEPTS[0].image}   
-                        /> 
-                        */}
-                        {/* 이 방법과 위의 방법 두 가지 방법이 있음, 결과는 동일함*/}
-                        {/* 
-                        <CoreConcept {...CORE_CONCEPTS[1] }/> 
-                        <CoreConcept {...CORE_CONCEPTS[2]} />
-                        <CoreConcept {...CORE_CONCEPTS[3]} /> 
-                        */}
-                    </ul>
-                </section>
-                <section id="examples">
-                    <h1>Examples</h1>
-                    <menu>
-                        {/* Component 합성 */}
-                        {/* handleSelect를 실행하는 대신 이 화살표 함수를 onSelect에 실행하는 방식 */}
-                        <TabButton 
-                            isSelected={selectedTopic === 'components'} 
-                            onSelect={() => handleSelect('components')}>
-                                Components
-                        </TabButton>
-                        <TabButton 
-                            isSelected={selectedTopic === 'jsx'} 
-                            onSelect={() => handleSelect('jsx')}>
-                                JSX
-                        </TabButton>
-                        <TabButton
-                            isSelected={selectedTopic === 'props'} 
-                            onSelect={() => handleSelect('props')}>
-                                Props
-                        </TabButton>
-                        <TabButton 
-                            isSelected={selectedTopic === 'state'} 
-                            onSelect={() => handleSelect('state')}>
-                                State
-                        </TabButton>
-
-                        {/* 위와 동일한 방법*/}
-                        {/* <TabButton label='Components' /> */}
-                    </menu>
-                    {/* 조건적 컨텐츠 렌더링 */}
-                    {!selectedTopic ? <p>Please select a topic</p> : null}
-
-                    {/* 위와 같은 의미(좀 더 코드가 간결해지고 이해하기 쉬워짐) */}
-                    {/* {!selectedTopic && <p>Please select a topic</p>} */}
-                    
-                    {selectedTopic ? (
-                        <div id="tab-content">
-                            <h3>{EXAMPLES[selectedTopic].title}</h3>
-                            <p>{EXAMPLES[selectedTopic].description}</p>
-                            <pre>
-                                <code>
-                                    {EXAMPLES[selectedTopic].code}
-                                </code>
-                            </pre>
-                        </div>
-                    ) : null}
-                </section>
+                <CoreConcepts />
+                <Examples />
             </main>
-        </Fragment>
+        </>
     );
 }
 
