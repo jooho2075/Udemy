@@ -17,34 +17,36 @@ function Examples() {
 
     return (
         <Section title="Examples" id="examples">
-            <Tabs buttons={
-                <>
-                    {/* Component 합성 */}
-                    {/* handleSelect를 실행하는 대신 이 화살표 함수를 onSelect에 실행하는 방식 */}
-                        <TabButton 
-                            isSelected={selectedTopic === 'components'} 
-                            onClick={() => handleSelect('components')}>
-                                Components
-                        </TabButton>
-                        <TabButton 
-                            isSelected={selectedTopic === 'jsx'} 
-                            onClick={() => handleSelect('jsx')}>
-                                JSX
-                        </TabButton>
-                        <TabButton
-                            isSelected={selectedTopic === 'props'} 
-                            onClick={() => handleSelect('props')}>
-                                Props
-                        </TabButton>
-                        <TabButton 
-                            isSelected={selectedTopic === 'state'} 
-                            onClick={() => handleSelect('state')}>
-                                State
-                        </TabButton>
+            <Tabs
+                ButtonsContainer="menu" // 식별자에는 문자열 이름을 사용
+                buttons={
+                    <>
+                        {/* Component 합성 */}
+                        {/* handleSelect를 실행하는 대신 이 화살표 함수를 onSelect에 실행하는 방식 */}
+                            <TabButton 
+                                isSelected={selectedTopic === 'components'} 
+                                onClick={() => handleSelect('components')}>
+                                    Components
+                            </TabButton>
+                            <TabButton 
+                                isSelected={selectedTopic === 'jsx'} 
+                                onClick={() => handleSelect('jsx')}>
+                                    JSX
+                            </TabButton>
+                            <TabButton
+                                isSelected={selectedTopic === 'props'} 
+                                onClick={() => handleSelect('props')}>
+                                    Props
+                            </TabButton>
+                            <TabButton 
+                                isSelected={selectedTopic === 'state'} 
+                                onClick={() => handleSelect('state')}>
+                                    State
+                            </TabButton>
 
-                        {/* 위와 동일한 방법*/}
-                        {/* <TabButton label='Components' /> */}
-                </>
+                            {/* 위와 동일한 방법*/}
+                            {/* <TabButton label='Components' /> */}
+                    </>
             }>
                 {/* 조건적 컨텐츠 렌더링 */}
                 {!selectedTopic ? <p>Please select a topic</p> : null}
