@@ -18,7 +18,7 @@ function Examples() {
     return (
         <Section title="Examples" id="examples">
             <Tabs
-                ButtonsContainer="menu" // 식별자에는 문자열 이름을 사용
+                // ButtonsContainer="menu" // 식별자에는 문자열 이름을 사용
                 buttons={
                     <>
                         {/* Component 합성 */}
