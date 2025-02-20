@@ -4,13 +4,15 @@ function Player({name, symbol}) {
     const [isEditing, setIsEditing] = useState(false);
 
     const handleEditClick = () => {
-        setIsEditing(true); // button을 클릭한 시점이기 때문에 true로 설정
+        setIsEditing(editing => !editing); // => schedules a state update to true
+        setIsEditing(editing => !editing); // => schedules a state update to true
     };
 
     let playerName = <span className="player-name">{name}</span>;
-
+    // let btnCaption = 'Edit';
     if(isEditing === true) {
-        playerName = <input type="text" required></input>
+        playerName = <input type="text" required value={name}></input>
+        // btnCaption = 'Save';
     }
 
     return (
@@ -19,7 +21,7 @@ function Player({name, symbol}) {
               {playerName}
               <span className="player-symbol">{symbol}</span>
             </span>
-            <button onClick={handleEditClick}>Edit</button>
+            <button onClick={handleEditClick}>{isEditing ? 'Save' : 'Edit'}</button>
         </li>
     );
 }
