@@ -12,6 +12,8 @@ function App() {
     duration: 10
   }); // useState에 할당된 초기 상태
 
+  const inputIsValid = userInput.duration >= 1;
+
   const handleChange = (inputIdentifier, newValue) => { // input 태그와 연결시키는 함수
     setUserInput(prevUserInput => {
         return{
@@ -25,7 +27,10 @@ function App() {
     <>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange}/>
-      <Results input={userInput}/>
+      {!inputIsValid && (
+        <p className="center">Please enter valid input data</p>)
+      }
+      {inputIsValid && <Results input={userInput}/>}
     </>
   );
 }
