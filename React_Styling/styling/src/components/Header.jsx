@@ -6,12 +6,7 @@ function Header() {
         <header>
             <img src={logo} alt="A canvas" />
             <h1>React Art</h1>
-            <p style={{
-                color: 'red',
-                textAlign: 'left'
-            }}>
-                A community of artists and art-lovers
-            </p>
+            <p>A community of artists and art-lovers</p>
         </header>
     );
 }
