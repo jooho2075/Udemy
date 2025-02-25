@@ -24,25 +24,28 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <div className="controls">
         <p>
-          <label>Email</label>
+          <label className={`label ${emailNotValid ? 'invalid' : ''}`}>Email</label>
           <input
             type="email"
-            style={{ // 동적 및 조건적 Inline Style
-                backgroundColor: emailNotValid ? '#fed2d2' : '#d1d5db'
-            }}
-            // className={emailNotValid ? 'invalid' : undefined}
+            // 동적 및 조건적 Inline Style
+            // style={{
+            //     backgroundColor: emailNotValid ? '#fed2d2' : '#d1d5db'
+            // }}
+            className={emailNotValid ? 'invalid' : undefined}
             onChange={(event) => handleInputChange('email', event.target.value)}
           />
         </p>
         <p>
-          <label>Password</label>
-          <input
-            type="password"
-            // className={passwordNotValid ? 'invalid' : undefined}
-            onChange={(event) =>
-              handleInputChange('password', event.target.value)
-            }
-          />
+            <label className={`label ${emailNotValid ? 'invalid' : ''}`}>
+                Password
+            </label>
+            <input
+                type="password"
+                // className={passwordNotValid ? 'invalid' : undefined}
+                onChange={(event) =>
+                handleInputChange('password', event.target.value)
+                }
+            />
         </p>
       </div>
       <div className="actions">
