@@ -17,6 +17,7 @@ function Player() {
         setEnteredPlayerName(playerName.current.value); 
         // 실제 참조값(ref)만 가짐
         // current : input 요소를 값으로 보관하고 속성들에 접근할 수 있게됨
+        playerName.current.value = '';
     };
 
     return(
