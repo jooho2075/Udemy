@@ -1,7 +1,9 @@
-function ResultModal({result, targetTime}) {
+import {forwardRef} from 'react';
+
+const ResultModal = forwardRef(function ResultModal({result, targetTime}, ref) {
     return(
         // <dialog> : 내장 스타일과 내장된 기능들 함께 제공
-        <dialog className="result-modal">
+        <dialog ref={ref} className="result-modal">
             <h2>You {result}</h2>
             <p>
                 The target time was <strong>{targetTime} second</strong>
@@ -14,6 +16,6 @@ function ResultModal({result, targetTime}) {
             </form>
         </dialog>
     );
-}
+});
 
 export default ResultModal;
