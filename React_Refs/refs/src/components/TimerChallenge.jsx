@@ -14,7 +14,7 @@ function TimerChallenge({title, targetTime}) {
     const handleStart = () => {
         timer.current = setTimeout(() => {
             setTimerExpired(true);
-            dialog.current.showModal(); // showModal() method : dialog를 호출할 수 있음
+            dialog.current.open(); // open() method : ResultModal.jsx에서 정의한 method
         }, targetTime * 1000);
 
         setTimerStarted(true);
