@@ -1,4 +1,5 @@
 import {forwardRef, useImperativeHandle, useRef} from 'react';
+import {createPortal} from 'react-dom';
 
 const ResultModal = forwardRef(function ResultModal(
     {targetTime, remainingTime}, 
@@ -20,7 +21,7 @@ const ResultModal = forwardRef(function ResultModal(
     // 첫번째 인수 - ref객체 : forwardRef함수에서 전달받은 객체
     // 두번째  인수 - 함수  
     
-    return(
+    return createPortal(
         // <dialog> : 내장 스타일과 내장된 기능들 함께 제공
         <dialog ref={dialog} className="result-modal">
             {userLost && <h2>You lost</h2>}
@@ -34,7 +35,8 @@ const ResultModal = forwardRef(function ResultModal(
             <form method="dialog" onSubmit={onReset}>
                 <button>Close</button>
             </form>
-        </dialog>
+        </dialog>,
+        document.getElementById('modal')
     );
 });
 
