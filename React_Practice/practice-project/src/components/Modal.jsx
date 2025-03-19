@@ -1,6 +1,8 @@
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 import {createPortal} from 'react-dom';
 
+import Button from './Button';
+
 const Modal = forwardRef(function Modal({children, buttonCaption}, ref) {
     const dialog = useRef();
     // useImperativeHandle hook에서 첫번째로 전달하는 값은 우리가 받는 ref
@@ -15,10 +17,10 @@ const Modal = forwardRef(function Modal({children, buttonCaption}, ref) {
     });
 
     return createPortal(
-        <dialog ref={dialog}>
+        <dialog ref={dialog} className="backdrop:bg-stone-900/90 p-4 rounded-sm shadow-md">
             {children}
-            <form method="dialog">
-                <button>{buttonCaption}</button> {/*dialog를 닫는 역할*/}
+            <form method="dialog" className="mt-4 text-right">
+                <Button>{buttonCaption}</Button> {/*dialog를 닫는 역할*/}
             </form>
         </dialog>, 
         document.getElementById('modal-root') // modal-root : index.html에서 가져온 것
