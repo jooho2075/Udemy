@@ -13,7 +13,7 @@ function App() {
   });
 
   const handleStartAddProject = () => {
-    setProjectsState(prevState => {
+    setProjectsState((prevState) => {
       return {
         ...prevState,
         selectedProjectId: null, // 새로운 프로젝트를 추가한다는 신호
@@ -22,19 +22,20 @@ function App() {
   };
 
   const handleAddProject = (projectData) => {
-    setProjectsState(prevState => {
+    setProjectsState((prevState) => {
+      const projectId = Math.random();
       const newProject = {
         ...projectData,
-        id: Math.random()
+        id: projectId
       };
+
       return {
         ...prevState,
+        selectedProjectId: undefined,
         projects:[...prevState.projects, newProject]
       };
-    })
+    });
   };
-
-  console.log(projectsState);
 
   let content;
 
@@ -46,7 +47,10 @@ function App() {
 
   return(
     <main className="h-screen my-8 flex gap-8">
-      <ProjectSidebar onStartAddProject={handleStartAddProject}/>
+      <ProjectSidebar 
+        onStartAddProject={handleStartAddProject} 
+        projects={projectsState.projects}
+      />
       {content}
     </main>
   );
