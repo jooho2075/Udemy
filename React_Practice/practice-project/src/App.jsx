@@ -3,6 +3,7 @@ import { useState } from "react";
 import NewProject from "./components/NewProject.jsx";
 import NoProjectSelected from "./components/NoProjectSelected.jsx";
 import ProjectSidebar from "./components/ProjectSidebar.jsx";
+import SelectedProject from "./components/SelectedProject.jsx";
 
 function App() {
   // 객체를 상태로서 제어하되 이 객체는 selectedProject라는 속성을 가짐
@@ -11,6 +12,15 @@ function App() {
     selectedProjectId: undefined, 
     projects: []
   });
+
+  const handleSelectProject = (id) => {
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+        selectedProjectId: id,
+      };
+    });
+  };
 
   const handleStartAddProject = () => {
     setProjectsState((prevState) => {
@@ -46,7 +56,9 @@ function App() {
     });
   };
 
-  let content;
+  const selectedProject = projectsState.projects.find(project => project.id === projectsState.selectedProjectId);
+
+  let content = <SelectedProject project={selectedProject}/>;
 
   if(projectsState.selectedProjectId === null) {
     content = (
@@ -61,6 +73,7 @@ function App() {
       <ProjectSidebar 
         onStartAddProject={handleStartAddProject} 
         projects={projectsState.projects}
+        onSelectProject={handleSelectProject}
       />
       {content}
     </main>
