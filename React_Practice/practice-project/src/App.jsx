@@ -10,8 +10,29 @@ function App() {
   const [projectsState, setProjectsState] = useState({
     // undefined인 이유 : selectedProject속성을 사용해 나중에 프로젝트가 여러개 있을 때 그 중 선택된 프로젝트의 ID저장
     selectedProjectId: undefined, 
-    projects: []
+    projects: [],
+    tasks: []
   });
+
+  const handleAddTask = (text) => {
+    setProjectsState((prevState) => {
+      const taskId = Math.random();
+      const newTask = {
+        text: text,
+        projectId: prevState.selectedProjectId,
+        id: taskId,
+      };
+
+      return {
+        ...prevState,
+        tasks: [newTask, ...prevState.tasks],
+      };
+    });
+  };
+
+  const handleDeleteTask = () => {
+
+  };
 
   const handleSelectProject = (id) => {
     setProjectsState((prevState) => {
@@ -71,7 +92,13 @@ function App() {
   const selectedProject = projectsState.projects.find(project => project.id === projectsState.selectedProjectId);
 
   let content = (
-    <SelectedProject project={selectedProject} onDelete={handleDeleteProject}/>
+    <SelectedProject 
+      project={selectedProject} 
+      onDelete={handleDeleteProject}
+      onAddTask={handleAddTask}
+      onDeleteTask={handleDeleteTask}
+      tasks={projectsState.tasks}
+    />
   );
 
   if(projectsState.selectedProjectId === null) {
