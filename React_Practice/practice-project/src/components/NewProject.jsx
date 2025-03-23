@@ -73,5 +73,3 @@ function NewProject({onAdd, onCancel}) {
 }
 
 export default NewProject;
-
-// 이제부터 다시 시작 예정
