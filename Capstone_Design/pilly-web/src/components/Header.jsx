@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import logo from '../assets/pilly-logo.png';
+import logo from '../assets/new_logo.png';
 
 function Header() {
     const [isSidebarVisible, setIsSidebarVisible] = useState();
