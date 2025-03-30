@@ -1,12 +1,18 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import logo from '../assets/pilly-logo.png';
 
 function Header() {
     const [isSidebarVisible, setIsSidebarVisible] = useState();
+    const navigate = useNavigate();
 
     const toggleSidebar = () => {
         setIsSidebarVisible(!isSidebarVisible);
+    };
+
+    const onLoginClick = () => {
+        navigate('/login')
     };
 
     return(
@@ -32,6 +38,7 @@ function Header() {
                     <button 
                         className='rounded-md text-white px-4 py-2' 
                         style={{backgroundColor: "#2c2c2c", width: "200px"}}
+                        onClick={onLoginClick}
                     >
                         로그인
                     </button>    
