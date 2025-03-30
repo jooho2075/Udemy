@@ -1,9 +1,36 @@
+const styles = {
+    container: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '400px'
+    },
+    box: {
+        padding: '90px',
+        border: '2px solid #8300ff',
+        borderRadius: '30px',
+        backgroundColor: '#8300ff',
+        width: '100%',
+        textAlign: 'center'
+    },
+    text: {
+        fontSize: '40px',
+        fontWeight: 'bold',
+        color: 'white',
+        whiteSpace: 'nowrap'
+    }
+};
+
 function Main() {
     return(
         <>
-            <h1 style={{fontSize: "100px", fontWeight: "bold"}}>캡스톤 디자인</h1>
-            <div>
-                <p style={{fontSize: "50px"}}>무엇이 궁금하세요?</p>
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'ceter', alignItems: 'center', height: '100vh'}}>
+                <div style={styles.container}>
+                    <div style={styles.box}>
+                        <p style={styles.text}>건강 걱정 끝, 바디케어에 오신 것을 환영합니다</p>
+                    </div>
+                </div>
+                <p style={{fontSize: "50px", fontWeight: 'bold', marginBottom: '10px'}}>무엇이 궁금하세요?</p>
                 <div>
                     <input 
                         type="text" 

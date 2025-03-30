@@ -1,4 +1,4 @@
-import logo from '../assets/pilly-logo.png';
+import logo from '../assets/new_logo.png';
 
 function Footer() {
     return(
