@@ -79,7 +79,8 @@ function Login() {
                 }}>
                     로그인
                 </button>
-                <p style={{marginLeft: '10px', marginTop: 0}}>회원가입</p>
+                <p style={{marginLeft: '10px', marginBottom: '10px'}}>비밀번호를 잊으셨나요?</p>
+                <p style={{marginLeft: '10px', marginTop: 0}}>회원가입 하기</p>
             </form>
         </div>    
     );
