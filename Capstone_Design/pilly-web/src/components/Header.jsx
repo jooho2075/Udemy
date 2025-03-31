@@ -37,7 +37,7 @@ function Header() {
                 <div className='flex-1 flex justify-end'>
                     <button 
                         className='rounded-md text-white px-4 py-2' 
-                        style={{backgroundColor: "#2c2c2c", width: "200px"}}
+                        style={{backgroundColor: "#2678E4", width: "200px"}}
                         onClick={onLoginClick}
                     >
                         로그인

@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -79,7 +82,12 @@ function Login() {
                 }}>
                     로그인
                 </button>
-                <p style={{marginLeft: '10px', marginBottom: '10px'}}>비밀번호를 잊으셨나요?</p>
+                <p 
+                    style={{marginLeft: '10px', marginBottom: '10px', cursor: 'pointer'}}
+                    onClick={() => navigate('/Repassword')}
+                >
+                    비밀번호를 잊으셨나요?
+                </p>
                 <p style={{marginLeft: '10px', marginTop: 0}}>회원가입 하기</p>
             </form>
         </div>    
