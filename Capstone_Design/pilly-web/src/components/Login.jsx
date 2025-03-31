@@ -1,3 +1,6 @@
+// import kakaoLogo from '../assets/kakao_logo.png';
+// import googleLogo from '../assets/google_logo.png';
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,8 +17,19 @@ function Login() {
     };
 
     return(
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
-            <form onSubmit={handleSubmit} style={{textAlign: 'center', border: '1px solid gray', padding: '80px'}}>
+        <div style={{
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            height: '100vh', 
+            justifyContent: 'center', 
+            textAlign: 'center'}}
+        >
+            <p style={{ fontSize: 50, fontWeight: "bold", marginBottom: "20px" }}>
+                <span style={{color: '#F05636'}}>바디 </span><span style={{color: '#2678E4'}}>케어</span>와 함께 
+                <p>건강 관리 시작해요!</p>
+            </p>
+            <form onSubmit={handleSubmit} style={{textAlign: 'center', border: '3px solid gray', padding: '60px'}}>
                 <p style={{fontSize: "50px", fontWeight: "bold", marginBottom: "20px"}}>LogIn</p>
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}> 
                     <input 
@@ -95,8 +109,11 @@ function Login() {
                 }}>
                     회원가입
                 </button>
+                <p style={{marginBottom: '10px', color: '#2678E4'}}>
+                    소셜 로그인
+                </p>
                 <p 
-                    style={{marginLeft: '10px', marginBottom: '10px', cursor: 'pointer'}}
+                    style={{marginLeft: '10px', marginBottom: '10px', cursor: 'pointer', color: '#F05636'}}
                     onClick={() => navigate('/Repassword')}
                 >
                     비밀번호를 잊으셨나요?
