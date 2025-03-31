@@ -95,18 +95,22 @@ function Login() {
                         로그인
                     </button>
                 </div>
-                <button type="submit " style={{
-                    marginTop: '20px', 
-                    padding: '10px 20px', 
-                    width: '300px', 
-                    outline: '2px solid #F05636',
-                    borderRadius: '10px',
-                    fontWeight: 'bold',
-                    backgroundColor: '#F05636',
-                    color: 'white',
-                    marginBottom: '20px',
-                    boxShadow: '1px 1px 5px rgba(0,0,0,0.2)'
-                }}>
+                <button 
+                    type="submit " 
+                    style={{
+                        marginTop: '20px', 
+                        padding: '10px 20px', 
+                        width: '300px', 
+                        outline: '2px solid #F05636',
+                        borderRadius: '10px',
+                        fontWeight: 'bold',
+                        backgroundColor: '#F05636',
+                        color: 'white',
+                        marginBottom: '20px',
+                        boxShadow: '1px 1px 5px rgba(0,0,0,0.2)'
+                    }}
+                    onClick={() => navigate('/Membership')}
+                >
                     회원가입
                 </button>
                 <p style={{marginBottom: '10px', color: '#2678E4'}}>

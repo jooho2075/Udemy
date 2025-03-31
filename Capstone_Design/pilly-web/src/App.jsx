@@ -4,6 +4,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Main from './components/Main.jsx';
 import Login from './components/Login.jsx';
+import Membership from './components/Membership.jsx';
 
 function App() {
   return(
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
+          <Route path="/Membership" element={<Membership/>}></Route>
         </Routes>
         <Footer/>
       </Router>
