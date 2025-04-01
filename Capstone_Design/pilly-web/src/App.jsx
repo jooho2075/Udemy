@@ -8,6 +8,11 @@ import Membership from './components/Membership.jsx';
 import HealthInfo from './components/HealthInfo.jsx';
 import Needs from './components/Needs.jsx';
 import FinishMembership from './components/FinishMembership.jsx';
+import Diet from './components/Diet.jsx';
+import Medicine from './components/Medicine.jsx';
+import Exercise from './components/Exercise.jsx';
+import Sleep from './components/Sleep.jsx';
+import BulletinBoard from './components/BulletinBoard.jsx';
 
 function App() {
   return(
@@ -22,6 +27,11 @@ function App() {
             <Route path="/HealthInfo" element={<HealthInfo/>}></Route>
             <Route path='/Needs' element={<Needs/>}></Route>
             <Route path='/FinishMembership' element={<FinishMembership/>}></Route>
+            <Route path='/Diet' element={<Diet/>}></Route>
+            <Route path='/Medicine' element={<Medicine/>}></Route>
+            <Route path='/Exercise' element={<Exercise/>}></Route>
+            <Route path='/Sleep' element={<Sleep/>}></Route>
+            <Route path='/BulletinBoard' element={<BulletinBoard/>}></Route>
           </Routes>
         </div>
         <Footer/>

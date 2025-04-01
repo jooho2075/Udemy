@@ -38,6 +38,11 @@ function Header() {
         navigate('/');
     };
 
+    const handleNavigation = (path) => {
+        navigate(path);
+        setIsSidebarVisible(false); // 페이지 이동 후 사이드바 닫는 기능
+    };
+
     return (
         <>
             <header className='flex items-center justify-center space-x-4 p-2' style={{ backgroundColor: "#D9D9D9", height: 150 }}>
@@ -63,7 +68,7 @@ function Header() {
             {isSidebarVisible && (
                 <div ref={sidebarRef} className='fixed left-0 top-0 h-200 w-100 bg-gray-800 text-white p-4 rounded-md' style={{ marginLeft: 5, zIndex: 1000 }}>
                     <div className='flex items-center justify-between mb-4'>
-                        <img src={logo} className='w-16 h-auto cursor-pointer' onClick={logoClick} />
+                        <img src={logo} className='w-16 h-auto cursor-pointer' onClick={() => handleNavigation('/')} />
                         <button 
                             className='text-white bg-red-600 px-4 py-2 rounded-md'
                             onClick={toggleSidebar}
@@ -72,22 +77,22 @@ function Header() {
                         </button>
                     </div>
                     <div>
-                        <p onClick={logoClick} style={{fontSize: 20}}>홈</p>
+                        <p onClick={() => handleNavigation('/')} style={{fontSize: 20}}>홈</p>
                         <p style={{marginBottom: 20}}>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
                         
-                        <p style={{fontSize: 20}}>식단</p>
+                        <p onClick={() => handleNavigation('/Diet')} style={{fontSize: 20}}>식단</p>
                         <p style={{marginBottom: 20}}>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
 
-                        <p style={{fontSize: 20}}>복약</p>
+                        <p onClick={() => handleNavigation('/Medicine')} style={{fontSize: 20}}>복약</p>
                         <p style={{marginBottom: 20}}>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
 
-                        <p style={{fontSize: 20}}>운동</p>
+                        <p onClick={() => handleNavigation('/Exercise')} style={{fontSize: 20}}>운동</p>
                         <p style={{marginBottom: 20}}>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
 
-                        <p style={{fontSize: 20}}>수면</p>
+                        <p onClick={() => handleNavigation('/Sleep')} style={{fontSize: 20}}>수면</p>
                         <p style={{marginBottom: 20}}>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
 
-                        <p style={{fontSize: 20}}>게시판</p>
+                        <p onClick={() => handleNavigation('/BulletinBoard')} style={{fontSize: 20}}>게시판</p>
                         <p style={{marginBottom: 20}}>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
                     </div>
                 </div>
