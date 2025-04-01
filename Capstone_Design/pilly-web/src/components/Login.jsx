@@ -41,7 +41,7 @@ function Login() {
                             width: '300px',
                             padding: '10px',
                             borderRadius: '5px',
-                            marginBottom: '20px'    
+                            marginBottom: '10px'    
                         }}
                         placeholder='이메일'
                         value={id}
@@ -106,7 +106,7 @@ function Login() {
                         fontWeight: 'bold',
                         backgroundColor: '#F05636',
                         color: 'white',
-                        marginBottom: '20px',
+                        marginBottom: '10px',
                         boxShadow: '1px 1px 5px rgba(0,0,0,0.2)'
                     }}
                     onClick={() => navigate('/Membership')}
