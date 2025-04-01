@@ -82,7 +82,7 @@ function Needs() {
                             marginBottom: '10px',
                             boxShadow: '1px 1px 5px rgba(0,0,0,0.2)'
                         }}
-                        onClick={() => navigate('')}
+                        onClick={() => navigate('/FinishMembership')}
                 >
                     다음
                 </button>
