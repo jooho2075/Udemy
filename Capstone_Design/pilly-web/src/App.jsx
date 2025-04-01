@@ -6,6 +6,7 @@ import Main from './components/Main.jsx';
 import Login from './components/Login.jsx';
 import Membership from './components/Membership.jsx';
 import HealthInfo from './components/HealthInfo.jsx';
+import Needs from './components/Needs.jsx';
 
 function App() {
   return(
@@ -18,6 +19,7 @@ function App() {
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/Membership" element={<Membership/>}></Route>
             <Route path="/HealthInfo" element={<HealthInfo/>}></Route>
+            <Route path='/Needs' element={<Needs/>}></Route>
           </Routes>
         </div>
         <Footer/>

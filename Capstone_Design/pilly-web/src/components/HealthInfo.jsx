@@ -116,7 +116,7 @@ function HealthInfo() {
                                 marginBottom: '10px',
                                 boxShadow: '1px 1px 5px rgba(0,0,0,0.2)'
                             }}
-                            onClick={() => navigate('')}
+                            onClick={() => navigate('/Needs')}
             >
                 다음
             </button>
