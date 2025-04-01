@@ -17,7 +17,7 @@ function Header() {
 
     return(
         <>
-            <header className='flex items-center justify-between p-0.5' style={{ backgroundColor: "#D9D9D9"}}>
+            <header className='flex items-center justify-between p-0.5' style={{ backgroundColor: "#D9D9D9", height: 150}}>
                 <div className='mr-2'>
                     <button onClick={toggleSidebar} className='text-white bg-gray-800 p-2 rounded-md'>
                         메뉴

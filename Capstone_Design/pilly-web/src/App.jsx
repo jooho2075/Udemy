@@ -9,18 +9,20 @@ import HealthInfo from './components/HealthInfo.jsx';
 
 function App() {
   return(
-    <>
+    <div className='flex flex-col min-h-screen'>
       <Router>
         <Header/>
-        <Routes>
-          <Route path="/" element={<Main/>}></Route>
-          <Route path="/login" element={<Login/>}></Route>
-          <Route path="/Membership" element={<Membership/>}></Route>
-          <Route path="/HealthInfo" element={<HealthInfo/>}></Route>
-        </Routes>
+        <div>
+          <Routes>
+            <Route path="/" element={<Main/>}></Route>
+            <Route path="/login" element={<Login/>}></Route>
+            <Route path="/Membership" element={<Membership/>}></Route>
+            <Route path="/HealthInfo" element={<HealthInfo/>}></Route>
+          </Routes>
+        </div>
         <Footer/>
       </Router>
-    </>
+    </div>
   );
 }
 
