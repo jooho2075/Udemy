@@ -15,6 +15,10 @@ function Header() {
         navigate('/login')
     };
 
+    const logoClick = () => {
+        navigate('/');
+    };
+
     return(
         <>
             <header className='flex items-center justify-between p-0.5' style={{ backgroundColor: "#D9D9D9", height: 150}}>
@@ -24,7 +28,7 @@ function Header() {
                     </button>
                 </div>
                 <div className='flex justify-center flex-1'>
-                    <img src={logo} />
+                    <img src={logo} onClick={logoClick}/>
                 </div>
                 <div>
                     <input 
