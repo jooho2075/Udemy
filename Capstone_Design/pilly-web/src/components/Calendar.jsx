@@ -1,11 +1,20 @@
+import PropTypes from 'prop-types';
 import { useRef, useState } from "react";
 import { ScrollMenu } from "react-horizontal-scrolling-menu";
 import { format, addDays, subDays } from "date-fns";
 import { ko } from "date-fns/locale";
 import "react-horizontal-scrolling-menu/dist/styles.css";
 
-function HorizontalCalendar() {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+function HorizontalCalendar({ onDateSelect }) {
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  // 날짜 클릭 시 선택된 날짜 업데이트 및 부모 컴포넌트(Diet)로 전달
+  const handleDateClick = (date) => {
+    setSelectedDate(date);
+    if (onDateSelect) {
+      onDateSelect(date);
+    }
+  };
 
   // 초기 날짜 배열 설정 (5개만 보이게)
   const [days, setDays] = useState(() =>
@@ -69,17 +78,19 @@ function HorizontalCalendar() {
   };
 
   return (
-    <div style={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
-          alignItems: 'center',
-          width: "100%", 
-          background: "#F3F0F6", 
-          padding: "10px", 
-          position: 'relative' }}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        background: "#F3F0F6",
+        padding: "10px",
+        position: "relative",
+      }}
     >
       {/* 왼쪽 버튼 */}
-      <button 
+      <button
         onClick={() => {
           loadMoreDaysLeft();
           scrollLeft();
@@ -87,34 +98,34 @@ function HorizontalCalendar() {
         style={{
           height: "50px",
           width: "50px",
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           marginRight: "10px",
           padding: "10px",
           cursor: "pointer",
-          fontSize: 30
+          fontSize: 30,
         }}
       >
         ◀
       </button>
 
-      <div 
-        style={{ 
+      <div
+        style={{
           display: "flex",
           alignItems: "center",
-          overflowX: "auto", 
-          whiteSpace: "nowrap", 
+          overflowX: "auto",
+          whiteSpace: "nowrap",
           width: "60%", // 5개 날짜만 보이도록 조정
-          position: "relative"
-        }} 
+          position: "relative",
+        }}
         ref={scrollContainerRef}
       >
         <ScrollMenu>
           {days.map((day) => (
-            <div 
+            <div
               key={day}
-              onClick={() => setSelectedDate(day)}
+              onClick={() => handleDateClick(day)}
               style={{
                 padding: "10px 20px",
                 margin: "5px",
@@ -132,7 +143,7 @@ function HorizontalCalendar() {
       </div>
 
       {/* 오른쪽 버튼 */}
-      <button 
+      <button
         onClick={() => {
           loadMoreDaysRight();
           scrollRight();
@@ -140,13 +151,13 @@ function HorizontalCalendar() {
         style={{
           height: "50px",
           width: "50px",
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           marginLeft: "10px",
           padding: "10px",
           cursor: "pointer",
-          fontSize: 30
+          fontSize: 30,
         }}
       >
         ▶
@@ -154,5 +165,9 @@ function HorizontalCalendar() {
     </div>
   );
 }
+
+HorizontalCalendar.propTypes = {
+  onDateSelect: PropTypes.func.isRequired,
+};
 
 export default HorizontalCalendar;
