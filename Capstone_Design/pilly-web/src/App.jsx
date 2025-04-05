@@ -13,6 +13,8 @@ import Medicine from './components/Medicine.jsx';
 import Exercise from './components/Exercise.jsx';
 import Sleep from './components/Sleep.jsx';
 import BulletinBoard from './components/BulletinBoard.jsx';
+import Repassword from './components/Repassword.jsx';
+import FinishRepassword from './components/FinishRepassword.jsx';
 
 function App() {
   return(
@@ -32,6 +34,8 @@ function App() {
             <Route path='/Exercise' element={<Exercise/>}></Route>
             <Route path='/Sleep' element={<Sleep/>}></Route>
             <Route path='/BulletinBoard' element={<BulletinBoard/>}></Route>
+            <Route path='/Repassword' element={<Repassword/>}></Route>
+            <Route path='/FinishRepassword' element={<FinishRepassword/>}></Route>
           </Routes>
         </div>
         <Footer/>
