@@ -16,11 +16,11 @@ function FinishMembership() {
 const styles = {
     container: {
         display: 'flex',
-        flexDirection: 'column', // 요소들을 세로로 정렬
-        justifyContent: 'center', // 수직 중앙 정렬
-        alignItems: 'center', // 수평 중앙 정렬
-        height: '100vh', // 화면 전체 높이
-        textAlign: 'center', // 텍스트 중앙 정렬
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        textAlign: 'center',
     },
     text: {
         fontSize: 50,

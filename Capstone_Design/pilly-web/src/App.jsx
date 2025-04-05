@@ -15,6 +15,7 @@ import Sleep from './components/Sleep.jsx';
 import BulletinBoard from './components/BulletinBoard.jsx';
 import Repassword from './components/Repassword.jsx';
 import FinishRepassword from './components/FinishRepassword.jsx';
+import WriteBulletinBoard from './components/WriteBulletinBoard.jsx';
 
 function App() {
   return(
@@ -36,6 +37,8 @@ function App() {
             <Route path='/BulletinBoard' element={<BulletinBoard/>}></Route>
             <Route path='/Repassword' element={<Repassword/>}></Route>
             <Route path='/FinishRepassword' element={<FinishRepassword/>}></Route>
+            <Route path='/BulletinBoard' element={<BulletinBoard/>}></Route>
+            <Route path='/WriteBulletinBoard' element={<WriteBulletinBoard/>}></Route>
           </Routes>
         </div>
         <Footer/>
