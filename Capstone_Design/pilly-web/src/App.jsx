@@ -11,7 +11,6 @@ import FinishMembership from './components/FinishMembership.jsx';
 import Diet from './components/Diet.jsx';
 import Medicine from './components/Medicine.jsx';
 import Exercise from './components/Exercise.jsx';
-import Sleep from './components/Sleep.jsx';
 import BulletinBoard from './components/BulletinBoard.jsx';
 import Repassword from './components/Repassword.jsx';
 import FinishRepassword from './components/FinishRepassword.jsx';
@@ -33,7 +32,6 @@ function App() {
             <Route path='/Diet' element={<Diet/>}></Route>
             <Route path='/Medicine' element={<Medicine/>}></Route>
             <Route path='/Exercise' element={<Exercise/>}></Route>
-            <Route path='/Sleep' element={<Sleep/>}></Route>
             <Route path='/BulletinBoard' element={<BulletinBoard/>}></Route>
             <Route path='/Repassword' element={<Repassword/>}></Route>
             <Route path='/FinishRepassword' element={<FinishRepassword/>}></Route>

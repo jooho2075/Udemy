@@ -89,9 +89,6 @@ function Header() {
                         <p onClick={() => handleNavigation('/Exercise')} style={{fontSize: 20}}>운동</p>
                         <p style={{marginBottom: 20}}>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
 
-                        <p onClick={() => handleNavigation('/Sleep')} style={{fontSize: 20}}>수면</p>
-                        <p style={{marginBottom: 20}}>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-
                         <p onClick={() => handleNavigation('/BulletinBoard')} style={{fontSize: 20}}>게시판</p>
                         <p style={{marginBottom: 20}}>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
                     </div>
