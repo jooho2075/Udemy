@@ -15,6 +15,7 @@ import BulletinBoard from './components/BulletinBoard.jsx';
 import Repassword from './components/Repassword.jsx';
 import FinishRepassword from './components/FinishRepassword.jsx';
 import WriteBulletinBoard from './components/WriteBulletinBoard.jsx';
+import AddMedicine from './components/AddMedicine.jsx';
 
 function App() {
   return(
@@ -37,6 +38,7 @@ function App() {
             <Route path='/FinishRepassword' element={<FinishRepassword/>}></Route>
             <Route path='/BulletinBoard' element={<BulletinBoard/>}></Route>
             <Route path='/WriteBulletinBoard' element={<WriteBulletinBoard/>}></Route>
+            <Route path='AddMedicine' element={<AddMedicine/>}></Route>
           </Routes>
         </div>
         <Footer/>

@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import HorizontalCalendar from "./Calendar";
 
 function Medicine() {
     const [selectedDate, setSelectedDate] = useState(null);
+    const navigate = useNavigate();
 
     return (
         <div style={styles.wrapper}>
@@ -14,7 +16,12 @@ function Medicine() {
                         {selectedDate && <h2 style={styles.dateText}>{selectedDate}</h2>}
                             <div style={styles.mealRow}>
                                 <span style={styles.mealText}>오늘의 복약</span>
-                                <button style={styles.addButton}>복용약 추가</button>
+                                <button 
+                                    style={styles.addButton} 
+                                    onClick={() => navigate('/AddMedicine', {state: {selectedDate}})}
+                                >
+                                    복용약 추가
+                                </button>
                             </div>
                     </div>
                 </div>

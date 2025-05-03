@@ -1,6 +1,3 @@
-// import kakaoLogo from '../assets/kakao_logo.png';
-// import googleLogo from '../assets/google_logo.png';
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
