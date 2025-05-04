@@ -5,7 +5,6 @@ import addImage from '../assets/ic_baseline-plus.png';
 function AddMedicine() {
     const location = useLocation();
     const selectedDate = location.state?.selectedDate;
-
     const navigate = useNavigate();
 
     const [vitaminForms, setVitaminForms] = useState([]);
@@ -55,6 +54,18 @@ function AddMedicine() {
         const updated = [...medicineForms];
         updated[index].time = time;
         setMedicineForms(updated);
+    };
+
+    const handleSaveToLocalStorageAndNavigate = () => {
+        const data = {
+            vitamins: vitaminForms,
+            medicines: medicineForms,
+            selectedDate: selectedDate
+        };
+        localStorage.setItem(`MedicineData-${selectedDate}`, JSON.stringify(data));
+
+        // 상태를 갱신하여 페이지가 새로고침되도록 설정
+        navigate('/Medicine', { state: { selectedDate } });
     };
 
     return (
@@ -166,19 +177,17 @@ function AddMedicine() {
                 ))}
             </div>
 
-            {/* 처방약 섹션 + 버튼을 감싸는 래퍼 */}
+            {/* 처방약 섹션 */}
             <div style={{
                 position: 'relative',
                 width: 600,
                 margin: '40px auto'
             }}>
-                {/* 처방약 박스 */}
                 <div style={{
                     border: '1px solid gray',
                     borderRadius: 6,
                     padding: 20,
                     position: 'relative',
-                    
                 }}>
                     <div style={{
                         display: 'flex',
@@ -275,9 +284,9 @@ function AddMedicine() {
                     ))}
                 </div>
 
-                {/* 기록하기 버튼 - 처방약 우측 하단 바깥에 위치 */}
+                {/* 기록하기 버튼 */}
                 <button
-                    onClick={() => navigate('/Medicine')}
+                    onClick={handleSaveToLocalStorageAndNavigate}
                     style={{
                         position: 'absolute',
                         right: -120,
