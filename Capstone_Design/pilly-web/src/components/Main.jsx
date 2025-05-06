@@ -26,9 +26,14 @@ function Main() {
     }, []);
 
     const handleSearchClick = () => {
-        if(searchInput.trim()) {
-            navigate(`/Search?q=${encodeURIComponent(searchInput.trim())}`);
+        const trimmedInput = searchInput.trim();
+
+        if(!trimmedInput) {
+            alert("검색어를 입력하세요");
+            return;
         }
+
+        navigate(`/Search?q=${encodeURIComponent(searchInput.trim())}`);
     };
 
     return (
@@ -45,6 +50,11 @@ function Main() {
                         type="text"
                         value={searchInput}
                         onChange={(e) => setSearchInput(e.target.value)}
+                        onKeyDown={(e) => {
+                            if(e.key == 'Enter') {
+                                handleSearchClick();
+                            }
+                        }}
                         className='px-4 py-2 border border-black rounded-md w-full text-center placeholder:text-center focus:text-left' 
                         style={{paddingRight: '30px'}}  // 오른쪽 여백을 이미지 크기만큼 줍니다.
                         placeholder='검색하고 싶은 내용 입력해보세요!'

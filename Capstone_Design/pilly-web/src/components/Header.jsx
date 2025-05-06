@@ -2,10 +2,14 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import logo from '../assets/new_logo.png';
+import searchIcon from '../assets/material-symbols_search.png';
 
 function Header() {
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+    const [searchInput, setSearchInput] = useState('');
+
     const navigate = useNavigate();
+    
     const sidebarRef = useRef(null);
 
     const toggleSidebar = () => {
@@ -43,6 +47,17 @@ function Header() {
         setIsSidebarVisible(false); // 페이지 이동 후 사이드바 닫는 기능
     };
 
+    const handleSearchClick = () => {
+        const trimmedInput = searchInput.trim();
+
+        if(!trimmedInput) {
+            alert('검색어를 입력하세요');
+            return;
+        }
+        
+        navigate(`/Search?q=${encodeURIComponent(trimmedInput)}`);
+    };
+
     return (
         <>
             <header className='flex items-center justify-center space-x-4 p-2' style={{ backgroundColor: "#D9D9D9", height: 150 }}>
@@ -50,12 +65,27 @@ function Header() {
                     메뉴
                 </button>
                 <img src={logo} onClick={logoClick} className='h-20 cursor-pointer' />
-                <input 
-                    type='text' 
-                    className='px-4 py-2 border border-black rounded-md text-center placeholder:text-center focus:text-left' 
-                    style={{ width: "400px" }}
-                    placeholder='검색어 입력'
-                />
+                <div style={{position: 'relative', width: '400px'}}>
+                    <input 
+                        type='text'
+                        value={searchInput}
+                        onChange={(e) => setSearchInput(e.target.value)}
+                        onKeyDown={(e) => {
+                            if(e.key == 'Enter') {
+                                handleSearchClick();
+                            }
+                        }}
+                        className='w-full px-4 py-2 border border-black rounded-md pr-10 text-center placeholder:text-center focus:text-left' 
+                        style={{ paddingRight: '40px' }}
+                        placeholder='검색어 입력'
+                    />
+                    <img 
+                        src={searchIcon}
+                        alt="검색 버튼"
+                        onClick={handleSearchClick}
+                        style={{position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-50%)', width: '20px', height: '20px'}}     
+                    />
+                </div>
                 <button 
                     className='rounded-md text-white px-4 py-2' 
                     style={{ backgroundColor: "#2678E4" }}
