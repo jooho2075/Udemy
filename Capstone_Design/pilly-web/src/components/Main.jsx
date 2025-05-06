@@ -1,12 +1,29 @@
 import {useNavigate} from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import searchIcon from '../assets/material-symbols_search.png';
+import medicineIcon from '../assets/medicine_image.png';
 
 function Main() {
     const navigate = useNavigate();
 
     const [searchInput, setSearchInput] = useState('');
+    const [vitaminNames, setVitaminNames] = useState([]);
+    const [medicineNames, setMedicineNames] = useState([]);
+
+    useEffect(() => {
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0];
+        const data = JSON.parse(localStorage.getItem(`MedicineData-${formattedDate}`));
+
+        if(data) {
+            const vitamins = data.vitamins || [];
+            const medicines = data.medicines || [];
+
+            setVitaminNames(vitamins.map(v => v.name));
+            setMedicineNames(medicines.map(m => m.name));
+        }
+    }, []);
 
     const handleSearchClick = () => {
         if(searchInput.trim()) {
@@ -16,7 +33,7 @@ function Main() {
 
     return (
         <>
-            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingTop: '200px'}}>
                 <div style={{...styles.container, marginTop: '-200px'}}>
                     <div style={styles.box}>
                         <p style={styles.text}>건강 걱정 끝, 바디케어에 오신 것을 환영합니다</p>
@@ -45,6 +62,31 @@ function Main() {
                             height: '20px'
                         }}
                     />
+                </div>
+                <div style={{marginTop: '30px', width: '600px', fontSize: 30, fontWeight: 'bold', textAlign: 'left'}}>
+                        한눈에 확인하기
+                </div>
+                <div style={{width: '600px', marginTop: '20px', marginBottom: '150px', border: '2px solid gray', borderRadius: '6px', textAlign: 'left'}}>
+                    <div style={{padding: '10px', fontSize: 20, fontWeight: 'bold'}}>나의 하루</div>
+                    
+                    <div style={{padding: '10px', fontSize: 20, fontWeight: 'bold'}}>나의 식단</div>
+
+                    <div style={{width: '550px' ,margin: '0 auto', fontSize: 20, fontWeight: 'bold'}}>나의 복약</div>
+                    <div style={{width: '550px', margin: '0 auto', marginTop: '5px', border: '1px solid gray', borderRadius: '6px'}}>
+                        <div style={{display: 'flex', alignItems: 'center', marginBottom: '4px', marginTop: '5px'}}>
+                            <img src={medicineIcon} style={{marginLeft: '5px'}}/>
+                            <span style={{fontWeight: 'bold', marginLeft: '5px'}}>영양제</span>
+                        </div>
+                        <div style={{marginLeft: '5px', marginBottom: '5px', fontWeight: 'bold'}}>{vitaminNames.length > 0 ? vitaminNames.join('') : '아직 계획되지 않았어요...'}</div>
+                        
+                        <div style={{display: 'flex', alignItems: 'center', marginBottom: '4px'}}>
+                            <img src={medicineIcon} style={{marginLeft: '5px'}}/>
+                            <span style={{fontWeight: 'bold', marginLeft: '5px'}}>처방약</span>
+                        </div>
+                        <div style={{marginLeft: '5px', marginBottom: '5px', fontWeight: 'bold'}}>{medicineNames.length > 0 ? medicineNames.join('') : '아직 계획되지 않았어요...'}</div>
+                    </div>
+                    
+                    <div style={{padding: '10px', fontSize: 20, fontWeight: 'bold'}}>나의 운동</div>
                 </div>
             </div>
         </>
