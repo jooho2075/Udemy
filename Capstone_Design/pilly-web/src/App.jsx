@@ -18,6 +18,7 @@ import WriteBulletinBoard from './components/WriteBulletinBoard.jsx';
 import AddMedicine from './components/AddMedicine.jsx';
 import Search from './components/Search.jsx';
 import AddDiet from './components/AddDiet.jsx';
+import AddExercise from './components/AddExercise.jsx';
 
 function App() {
   return(
@@ -40,9 +41,10 @@ function App() {
             <Route path='/FinishRepassword' element={<FinishRepassword/>}></Route>
             <Route path='/BulletinBoard' element={<BulletinBoard/>}></Route>
             <Route path='/WriteBulletinBoard' element={<WriteBulletinBoard/>}></Route>
-            <Route path='AddMedicine' element={<AddMedicine/>}></Route>
-            <Route path='Search' element={<Search/>}></Route>
-            <Route path='AddDiet' element={<AddDiet></AddDiet>}></Route>
+            <Route path='/AddMedicine' element={<AddMedicine/>}></Route>
+            <Route path='/Search' element={<Search/>}></Route>
+            <Route path='/AddDiet' element={<AddDiet></AddDiet>}></Route>
+            <Route path='/AddExercise' element={<AddExercise></AddExercise>}></Route>
           </Routes>
         </div>
         <Footer/>

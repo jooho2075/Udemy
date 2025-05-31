@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import HorizontalCalendar from './Calendar';
 
 function Exercise() {
     const [selectedDate, setSelectedDate] = useState(null);
+
+    const navigate = useNavigate();
     
         return (
             <div style={styles.wrapper}>
@@ -14,7 +17,10 @@ function Exercise() {
                             {selectedDate && <h2 style={styles.dateText}>{selectedDate}</h2>}
                                 <div style={styles.mealRow}>
                                     <span style={styles.mealText}>오늘의 운동</span>
-                                    <button style={styles.addButton}>운동량 추가</button>
+                                    <button style={styles.addButton}
+                                            onClick={() => navigate('/AddExercise')}
+                                    >
+                                        운동 추가</button>
                                 </div>
                         </div>
                     </div>
@@ -31,19 +37,9 @@ const styles = {
     dateText: { fontSize: 40, fontWeight: 'bold', color: 'black' },
     mealRow: { display: 'flex', alignItems: 'center', gap: 10, marginTop: 10 },
     mealText: { marginTop: 10, marginRight: 20, fontSize: 24, fontWeight: 'bold', color: '#333' },
-    addButton: { 
-        padding: '8px 16px', 
-        fontSize: 20, 
-        cursor: 'pointer', 
-        display: 'flex', 
-        alignItems: 'center',
-        marginLeft: 20,
-        fontWeight: 'bold',
-        border: '1px solid #2678E4',
-        borderRadius: '8px',
-        color: 'white',
-        backgroundColor: '#2678E4'
-    }
+    addButton: {padding: '8px 16px', fontSize: 20, cursor: 'pointer', display: 'flex', alignItems: 'center', marginLeft: 20, 
+                fontWeight: 'bold', border: '1px solid #2678E4', borderRadius: '8px', color: 'white', backgroundColor: '#2678E4'
+            }
 };
 
 export default Exercise;
