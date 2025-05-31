@@ -17,6 +17,7 @@ import FinishRepassword from './components/FinishRepassword.jsx';
 import WriteBulletinBoard from './components/WriteBulletinBoard.jsx';
 import AddMedicine from './components/AddMedicine.jsx';
 import Search from './components/Search.jsx';
+import AddDiet from './components/AddDiet.jsx';
 
 function App() {
   return(
@@ -41,6 +42,7 @@ function App() {
             <Route path='/WriteBulletinBoard' element={<WriteBulletinBoard/>}></Route>
             <Route path='AddMedicine' element={<AddMedicine/>}></Route>
             <Route path='Search' element={<Search/>}></Route>
+            <Route path='AddDiet' element={<AddDiet></AddDiet>}></Route>
           </Routes>
         </div>
         <Footer/>
