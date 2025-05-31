@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import searchIcon from '../assets/material-symbols_search.png';
 import medicineIcon from '../assets/medicine_image.png';
 import foodIcon from '../assets/fluent_food-24-regular.png';
+import addImage from '../assets/icon-park-outline_muscle.png';  // 운동 아이콘 추가
 
 function Main() {
     const navigate = useNavigate();
@@ -16,12 +17,18 @@ function Main() {
         점심: [],
         저녁: []
     });
+    const [exercisesByPart, setExercisesByPart] = useState({
+        하체: [],
+        어깨: [],
+        가슴: [],
+        팔: []
+    });
 
     useEffect(() => {
         const today = new Date();
         const formattedDate = today.toISOString().split('T')[0];
 
-        // 복약 데이터
+        // 복약 데이터 불러오기
         const data = JSON.parse(localStorage.getItem(`MedicineData-${formattedDate}`));
         if (data) {
             const vitamins = data.vitamins || [];
@@ -31,7 +38,7 @@ function Main() {
             setMedicineNames(medicines.map(m => m.name));
         }
 
-        // 식단 데이터
+        // 식단 데이터 불러오기
         const allDiet = JSON.parse(localStorage.getItem("dietList")) || [];
         const todayDiet = allDiet.filter(item => item.date === formattedDate);
 
@@ -43,6 +50,17 @@ function Main() {
         });
 
         setDietData(grouped);
+
+        // 운동 데이터 불러오기 (exercises 키 사용, 날짜 구분 없을 경우 전체 불러옴)
+        const savedExercises = JSON.parse(localStorage.getItem('exercises')) || [];
+        const groupedExercises = { 하체: [], 어깨: [], 가슴: [], 팔: [] };
+        savedExercises.forEach(({ part, name }) => {
+            if (groupedExercises[part]) {
+                groupedExercises[part].push(name);
+            }
+        });
+        setExercisesByPart(groupedExercises);
+
     }, []);
 
     const handleSearchClick = () => {
@@ -57,7 +75,7 @@ function Main() {
 
     return (
         <>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingTop: '200px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingTop: '20px' }}>
                 <div style={{ ...styles.container, marginTop: '-200px' }}>
                     <div style={styles.box}>
                         <p style={styles.text}>건강 걱정 끝, 바디케어에 오신 것을 환영합니다</p>
@@ -99,12 +117,25 @@ function Main() {
                 <div style={{ marginTop: '30px', width: '600px', fontSize: 30, fontWeight: 'bold', textAlign: 'left' }}>
                     한눈에 확인하기
                 </div>
-                <div style={{ width: '600px', marginTop: '20px', marginBottom: '150px', border: '2px solid gray', borderRadius: '6px', textAlign: 'left' }}>
-                    <div style={{ padding: '10px', fontSize: 20, fontWeight: 'bold' }}>나의 하루</div>
+                <div style={{ width: '600px', marginTop: '20px', marginBottom: '150px', border: '5px solid #d9d9d9', borderRadius: '6px', textAlign: 'left' }}>
+                    <div style={{
+                        width: '550px', margin: '0 auto', fontSize: 30,
+                        fontWeight: 'bold', marginBottom: 25, marginTop: 10, textAlign: 'center'
+                    }}>
+                        나의 하루
+                    </div>
 
                     {/* 나의 식단 */}
-                    <div style={{ width: '550px', margin: '0 auto', fontSize: 20, fontWeight: 'bold' }}>나의 식단</div>
-                    <div style={{ width: '550px', margin: '0 auto', marginBottom: 15, border: '1px solid gray', borderRadius: '6px' }}>
+                    <div style={{ width: '550px', margin: '0 auto', fontSize: 20, fontWeight: 'bold', position: 'relative' }}>
+                        나의 식단
+                        <button
+                            style={styles.moveButton}
+                            onClick={() => navigate('/Diet')}
+                        >
+                            이동
+                        </button>
+                    </div>
+                    <div style={{ width: '550px', margin: '0 auto', marginBottom: 15, border: '5px solid #d9d9d9', borderRadius: '6px', backgroundColor: '#f0f3f6' }}>
                         {['아침', '점심', '저녁'].map(mealTime => (
                             <div key={mealTime}>
                                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '4px', marginTop: '5px' }}>
@@ -121,8 +152,16 @@ function Main() {
                     </div>
 
                     {/* 나의 복약 */}
-                    <div style={{ width: '550px', margin: '0 auto', fontSize: 20, fontWeight: 'bold' }}>나의 복약</div>
-                    <div style={{ width: '550px', margin: '0 auto', marginBottom: 15, border: '1px solid gray', borderRadius: '6px' }}>
+                    <div style={{ width: '550px', margin: '0 auto', fontSize: 20, fontWeight: 'bold', position: 'relative' }}>
+                        나의 복약
+                        <button
+                            style={styles.moveButton}
+                            onClick={() => navigate('/Medicine')}
+                        >
+                            이동
+                        </button>
+                    </div>
+                    <div style={{ width: '550px', margin: '0 auto', marginBottom: 15, border: '5px solid #d9d9d9', borderRadius: '6px', backgroundColor: '#f0f3f6' }}>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '4px', marginTop: '5px' }}>
                             <img src={medicineIcon} style={{ marginLeft: '5px' }} alt="영양제 아이콘" />
                             <span style={{ fontWeight: 'bold', marginLeft: '5px' }}>영양제</span>
@@ -140,8 +179,31 @@ function Main() {
                         </div>
                     </div>
 
-                    {/* 나의 운동 (추후 확장 가능) */}
-                    <div style={{ padding: '10px', fontSize: 20, fontWeight: 'bold' }}>나의 운동</div>
+                    {/* 나의 운동 */}
+                    <div style={{ width: '550px', margin: '0 auto', fontSize: 20, fontWeight: 'bold', position: 'relative' }}>
+                        나의 운동
+                        <button
+                            style={styles.moveButton}
+                            onClick={() => navigate('/Exercise')}
+                        >
+                            이동
+                        </button>
+                    </div>
+                    <div style={{ width: '550px', margin: '0 auto', marginBottom: 15, border: '5px solid #d9d9d9', borderRadius: '6px', backgroundColor: '#f0f3f6' }}>
+                        {['하체', '어깨', '가슴', '팔'].map(part => (
+                            <div key={part} style={{ marginBottom: 12 }}>
+                                <div style={{ display: 'flex', alignItems: 'center', marginBottom: 4, marginTop: 5 }}>
+                                    <img src={addImage} style={{ marginLeft: 5, width: 20, height: 20 }} alt={`${part} 아이콘`} />
+                                    <span style={{ fontWeight: 'bold', marginLeft: 5 }}>{part}</span>
+                                </div>
+                                <div style={{ marginLeft: 5, marginBottom: 5, fontWeight: 'bold' }}>
+                                    {exercisesByPart[part].length > 0
+                                        ? exercisesByPart[part].join(', ')
+                                        : `${part}은 Pass하는 날~~`}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </>
@@ -170,5 +232,19 @@ const styles = {
         fontWeight: 'bold',
         color: 'white',
         whiteSpace: 'nowrap'
+    },
+    moveButton: {
+        position: 'absolute',
+        right: 0,
+        bottom: 0,
+        padding: '5px 10px',
+        fontSize: '14px',
+        fontWeight: 'bold',
+        backgroundColor: '#8300ff',
+        color: 'white',
+        border: 'none',
+        borderRadius: '6px',
+        cursor: 'pointer',
+        userSelect: 'none',
     }
 };
