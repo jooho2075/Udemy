@@ -9,10 +9,13 @@ function HorizontalCalendar({ onDateSelect }) {
   const [selectedDate, setSelectedDate] = useState(null);
 
   // 날짜 클릭 시 선택된 날짜 업데이트 및 부모 컴포넌트(Diet)로 전달
-  const handleDateClick = (date) => {
-    setSelectedDate(date);
-    if (onDateSelect) {
-      onDateSelect(date);
+  const handleDateClick = (dateStr) => {
+    setSelectedDate(dateStr);
+
+    const formattedDate = dateStr.split(' ')[0];
+    
+    if(onDateSelect) {
+      onDateSelect(formattedDate);
     }
   };
 
