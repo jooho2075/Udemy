@@ -74,34 +74,16 @@ function AddMedicine() {
             {selectedDate && <p style={{ textAlign: 'center' }}>{selectedDate}</p>}
 
             {/* 영양제 섹션 */}
-            <div style={{
-                border: '1px solid gray',
-                borderRadius: 6,
-                padding: 20,
-                width: 600,
-                margin: '40px auto',
-                position: 'relative'
-            }}>
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-start'
-                }}>
+            <div style={{border: '1px solid gray', borderRadius: 6, padding: 20, width: 600, margin: '40px auto', position: 'relative'}}>
+                <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start'}}>
                     <h2 style={{ fontWeight: 'bold', margin: 0 }}>영양제</h2>
-                    <img
-                        src={addImage}
-                        alt="추가"
-                        onClick={handleAddVitaminForm}
+                    <img src={addImage} alt="추가" onClick={handleAddVitaminForm}
                         style={{ width: 30, height: 30, cursor: 'pointer' }}
                     />
                 </div>
 
                 {vitaminForms.map((form, index) => (
-                    <div key={index} style={{
-                        marginTop: 20,
-                        borderTop: '1px solid #ddd',
-                        paddingTop: 10
-                    }}>
+                    <div key={index} style={{marginTop: 20, borderTop: '1px solid #ddd', paddingTop: 10}}>
                         {form.saved ? (
                             <div>
                                 <p style={{ fontWeight: 'bold' }}>시간대: {form.time}</p>
@@ -110,63 +92,33 @@ function AddMedicine() {
                             </div>
                         ) : (
                             <>
-                                <select
-                                    value={form.time || ''}
-                                    onChange={e => handleVitaminTimeSelect(index, e.target.value)}
-                                    style={{
-                                        marginBottom: 10,
-                                        padding: 6,
-                                        width: 200,
-                                        borderRadius: 6,
-                                        border: '1px solid gray'
-                                    }}
-                                >
+                                <select value={form.time || ''} onChange={e => handleVitaminTimeSelect(index, e.target.value)}
+                                    style={{marginBottom: 10, padding: 6, width: 200, borderRadius: 6, border: '1px solid gray'}}>
                                     <option value="" disabled>시간대 선택</option>
                                     {["아침", "점심", "저녁"].map(t => (
                                         <option key={t} value={t}>{t}</option>
                                     ))}
                                 </select>
                                 <div style={{ marginTop: 8 }}>
-                                    <input
-                                        type="text"
-                                        placeholder="영양제 이름"
-                                        value={form.name}
-                                        onChange={e => handleVitaminInputChange(index, 'name', e.target.value)}
-                                        style={{
-                                            marginBottom: 8,
-                                            width: 200,
-                                            padding: 4,
-                                            borderRadius: 6,
-                                            border: '1px solid gray',
-                                            display: 'block'
-                                        }}
+                                    <input type="text" placeholder="영양제 이름" value={form.name} 
+                                            onChange={e => handleVitaminInputChange(index, 'name', e.target.value)}
+                                            style={{marginBottom: 8, width: 200, padding: 4, 
+                                                    borderRadius: 6, border: '1px solid gray', display: 'block'
+                                                    }}
                                     />
-                                    <input
-                                        type="number"
-                                        placeholder="개수"
-                                        value={form.count}
-                                        onChange={e => handleVitaminInputChange(index, 'count', e.target.value)}
-                                        style={{
-                                            marginBottom: 8,
-                                            width: 200,
-                                            padding: 4,
-                                            borderRadius: 6,
-                                            border: '1px solid gray',
-                                            display: 'block'
-                                        }}
+                                    <input type="number" placeholder="개수" value={form.count} 
+                                            onChange={e => handleVitaminInputChange(index, 'count', e.target.value)}
+                                            style={{marginBottom: 8, width: 200, padding: 4, borderRadius: 6, 
+                                                    border: '1px solid gray', display: 'block'
+                                                    }}
                                     />
-                                    <button
-                                        onClick={() => handleSaveVitamin(index)}
-                                        disabled={!form.time || !form.name.trim() || !form.count}
-                                        style={{
-                                            marginTop: 8,
-                                            padding: '6px 12px',
-                                            backgroundColor: (!form.time || !form.name.trim() || !form.count) ? 'gray' : '#2678E4',
-                                            color: 'white',
-                                            border: 'none',
-                                            borderRadius: 6,
-                                            cursor: (!form.time || !form.name.trim() || !form.count) ? 'not-allowed' : 'pointer'
-                                        }}
+                                    <button onClick={() => handleSaveVitamin(index)}
+                                            disabled={!form.time || !form.name.trim() || !form.count}
+                                            style={{marginTop: 8, padding: '6px 12px', 
+                                                backgroundColor: (!form.time || !form.name.trim() || !form.count) ? 'gray' : '#2678E4',
+                                                    color: 'white', border: 'none', borderRadius: 6,
+                                                cursor: (!form.time || !form.name.trim() || !form.count) ? 'not-allowed' : 'pointer'
+                                                }}
                                     >
                                         저장
                                     </button>
@@ -178,37 +130,17 @@ function AddMedicine() {
             </div>
 
             {/* 처방약 섹션 */}
-            <div style={{
-                position: 'relative',
-                width: 600,
-                margin: '40px auto'
-            }}>
-                <div style={{
-                    border: '1px solid gray',
-                    borderRadius: 6,
-                    padding: 20,
-                    position: 'relative',
-                }}>
-                    <div style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'flex-start'
-                    }}>
+            <div style={{position: 'relative', width: 600, margin: '40px auto'}}>
+                <div style={{border: '1px solid gray', borderRadius: 6, padding: 20, position: 'relative'}}>
+                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start'}}>
                         <h2 style={{ fontWeight: 'bold', margin: 0 }}>처방약</h2>
-                        <img
-                            src={addImage}
-                            alt="추가"
-                            onClick={handleAddMedicineForm}
+                        <img src={addImage} alt="추가" onClick={handleAddMedicineForm}
                             style={{ width: 30, height: 30, cursor: 'pointer' }}
                         />
                     </div>
 
                     {medicineForms.map((form, index) => (
-                        <div key={index} style={{
-                            marginTop: 20,
-                            borderTop: '1px solid #ddd',
-                            paddingTop: 10
-                        }}>
+                        <div key={index} style={{marginTop: 20, borderTop: '1px solid #ddd', paddingTop: 10}}>
                             {form.saved ? (
                                 <div>
                                     <p style={{ fontWeight: 'bold' }}>시간대: {form.time}</p>
@@ -217,63 +149,34 @@ function AddMedicine() {
                                 </div>
                             ) : (
                                 <>
-                                    <select
-                                        value={form.time || ''}
-                                        onChange={e => handleMedicineTimeSelect(index, e.target.value)}
-                                        style={{
-                                            marginBottom: 10,
-                                            padding: 6,
-                                            width: 200,
-                                            borderRadius: 6,
-                                            border: '1px solid gray'
-                                        }}
-                                    >
+                                    <select value={form.time || ''}
+                                            onChange={e => handleMedicineTimeSelect(index, e.target.value)}
+                                            style={{marginBottom: 10, padding: 6, width: 200, borderRadius: 6, border: '1px solid gray'}}>
                                         <option value="" disabled>시간대 선택</option>
                                         {["아침", "점심", "저녁"].map(t => (
                                             <option key={t} value={t}>{t}</option>
                                         ))}
                                     </select>
                                     <div style={{ marginTop: 8 }}>
-                                        <input
-                                            type="text"
-                                            placeholder="처방약 이름"
-                                            value={form.name}
+                                        <input type="text" placeholder="처방약 이름" value={form.name}
                                             onChange={e => handleMedicineInputChange(index, 'name', e.target.value)}
-                                            style={{
-                                                marginBottom: 8,
-                                                width: 200,
-                                                padding: 4,
-                                                borderRadius: 6,
-                                                border: '1px solid gray',
-                                                display: 'block'
-                                            }}
+                                            style={{marginBottom: 8, width: 200, padding: 4,
+                                                    borderRadius: 6, border: '1px solid gray', display: 'block'
+                                                    }}
                                         />
-                                        <input
-                                            type="number"
-                                            placeholder="개수"
-                                            value={form.count}
-                                            onChange={e => handleMedicineInputChange(index, 'count', e.target.value)}
-                                            style={{
-                                                marginBottom: 8,
-                                                width: 200,
-                                                padding: 4,
-                                                borderRadius: 6,
-                                                border: '1px solid gray',
-                                                display: 'block'
-                                            }}
+                                        <input type="number" placeholder="개수" value={form.count}
+                                                onChange={e => handleMedicineInputChange(index, 'count', e.target.value)}
+                                                style={{marginBottom: 8, width: 200, padding: 4, borderRadius: 6,
+                                                        border: '1px solid gray', display: 'block'
+                                                        }}
                                         />
-                                        <button
-                                            onClick={() => handleSaveMedicine(index)}
-                                            disabled={!form.time || !form.name.trim() || !form.count}
-                                            style={{
-                                                marginTop: 8,
-                                                padding: '6px 12px',
-                                                backgroundColor: (!form.time || !form.name.trim() || !form.count) ? 'gray' : '#2678E4',
-                                                color: 'white',
-                                                border: 'none',
-                                                borderRadius: 6,
-                                                cursor: (!form.time || !form.name.trim() || !form.count) ? 'not-allowed' : 'pointer'
-                                            }}
+                                        <button onClick={() => handleSaveMedicine(index)}
+                                                disabled={!form.time || !form.name.trim() || !form.count}
+                                                style={{marginTop: 8, padding: '6px 12px',
+                                                        backgroundColor: (!form.time || !form.name.trim() || !form.count) ? 'gray' : '#2678E4',
+                                                        color: 'white', border: 'none', borderRadius: 6,
+                                                        cursor: (!form.time || !form.name.trim() || !form.count) ? 'not-allowed' : 'pointer'
+                                                    }}
                                         >
                                             저장
                                         </button>

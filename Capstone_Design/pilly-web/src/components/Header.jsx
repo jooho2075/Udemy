@@ -66,42 +66,35 @@ function Header() {
                 </button>
                 <img src={logo} onClick={logoClick} className='h-20 cursor-pointer' />
                 <div style={{position: 'relative', width: '400px'}}>
-                    <input 
-                        type='text'
-                        value={searchInput}
-                        onChange={(e) => setSearchInput(e.target.value)}
-                        onKeyDown={(e) => {
-                            if(e.key == 'Enter') {
-                                handleSearchClick();
-                            }
-                        }}
-                        className='w-full px-4 py-2 border border-black rounded-md pr-10 text-center placeholder:text-center focus:text-left' 
-                        style={{ paddingRight: '40px' }}
-                        placeholder='검색어 입력'
+                    <input type='text' value={searchInput}
+                            onChange={(e) => setSearchInput(e.target.value)}
+                            onKeyDown={(e) => {
+                                if(e.key == 'Enter') {
+                                    handleSearchClick();
+                                }
+                            }}
+                            className='w-full px-4 py-2 border border-black rounded-md pr-10 text-center placeholder:text-center focus:text-left' 
+                            style={{ paddingRight: '40px' }} placeholder='검색어 입력'
                     />
-                    <img 
-                        src={searchIcon}
-                        alt="검색 버튼"
-                        onClick={handleSearchClick}
-                        style={{position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-50%)', width: '20px', height: '20px'}}     
+                    <img src={searchIcon} alt="검색 버튼" onClick={handleSearchClick}
+                        style={{position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-50%)', 
+                                width: '20px', height: '20px'
+                            }}     
                     />
                 </div>
-                <button 
-                    className='rounded-md text-white px-4 py-2' 
-                    style={{ backgroundColor: "#2678E4" }}
-                    onClick={onLoginClick}
-                >
+                <button className='rounded-md text-white px-4 py-2' style={{ backgroundColor: "#2678E4" }} onClick={onLoginClick}>
                     로그인
                 </button>
             </header>
 
             {isSidebarVisible && (
-                <div ref={sidebarRef} className='fixed left-0 top-0 h-200 w-100 bg-gray-800 text-white p-4 rounded-md' style={{ marginLeft: 5, zIndex: 1000 }}>
+                <div ref={sidebarRef} className='fixed left-0 top-0 h-200 w-100 bg-gray-800 text-white p-4 rounded-md' 
+                    style={{ marginLeft: 5, zIndex: 1000 }}
+                >
                     <div className='flex items-center justify-between mb-4'>
                         <img src={logo} className='w-16 h-auto cursor-pointer' onClick={() => handleNavigation('/')} />
-                        <button 
-                            className='text-white bg-red-600 px-4 py-2 rounded-md'
-                            onClick={toggleSidebar}
+                        <button className='text-white bg-red-600 px-4 py-2 rounded-md'
+                                onClick={toggleSidebar}
                         >
                             닫기
                         </button>

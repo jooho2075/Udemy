@@ -17,6 +17,7 @@ function Main() {
         점심: [],
         저녁: []
     });
+
     const [exercisesByPart, setExercisesByPart] = useState({
         하체: [],
         어깨: [],
@@ -86,30 +87,18 @@ function Main() {
 
                 {/* 검색창 */}
                 <div style={{ position: 'relative', width: '600px' }}>
-                    <input
-                        type="text"
-                        value={searchInput}
-                        onChange={(e) => setSearchInput(e.target.value)}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter') handleSearchClick();
-                        }}
-                        className='px-4 py-2 border border-black rounded-md w-full text-center placeholder:text-center focus:text-left'
-                        style={{ paddingRight: '30px' }}
-                        placeholder='검색하고 싶은 내용 입력해보세요!'
+                    <input type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') handleSearchClick();
+                            }}
+                            className='px-4 py-2 border border-black rounded-md w-full text-center placeholder:text-center focus:text-left'
+                            style={{ paddingRight: '30px' }}
+                            placeholder='검색하고 싶은 내용 입력해보세요!'
                     />
-                    <img
-                        src={searchIcon}
-                        alt="검색 버튼"
-                        onClick={handleSearchClick}
-                        style={{
-                            position: 'absolute',
-                            right: '10px',
-                            top: '50%',
-                            transform: 'translateY(-50%)',
-                            width: '20px',
-                            height: '20px',
-                            cursor: 'pointer'
-                        }}
+                    <img src={searchIcon} alt="검색 버튼" onClick={handleSearchClick}
+                        style={{position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)',
+                                width: '20px', height: '20px', cursor: 'pointer'
+                                }}
                     />
                 </div>
 
@@ -118,24 +107,24 @@ function Main() {
                     한눈에 확인하기
                 </div>
                 <div style={{ width: '600px', marginTop: '20px', marginBottom: '150px', border: '5px solid #d9d9d9', borderRadius: '6px', textAlign: 'left' }}>
-                    <div style={{
-                        width: '550px', margin: '0 auto', fontSize: 30,
-                        fontWeight: 'bold', marginBottom: 25, marginTop: 10, textAlign: 'center'
-                    }}>
+                    <div style={{width: '550px', margin: '0 auto', fontSize: 30,
+                                fontWeight: 'bold', marginBottom: 25, marginTop: 10, textAlign: 'center'
+                                }}
+                    >
                         나의 하루
                     </div>
 
                     {/* 나의 식단 */}
                     <div style={{ width: '550px', margin: '0 auto', fontSize: 20, fontWeight: 'bold', position: 'relative' }}>
                         나의 식단
-                        <button
-                            style={styles.moveButton}
-                            onClick={() => navigate('/Diet')}
-                        >
+                        <button style={styles.moveButton} onClick={() => navigate('/Diet')}>
                             이동
                         </button>
                     </div>
-                    <div style={{ width: '550px', margin: '0 auto', marginBottom: 15, border: '5px solid #d9d9d9', borderRadius: '6px', backgroundColor: '#f0f3f6' }}>
+                    <div style={{width: '550px', margin: '0 auto', marginBottom: 15, border: '5px solid #d9d9d9',
+                                borderRadius: '6px', backgroundColor: '#f0f3f6'
+                                }}
+                    >
                         {['아침', '점심', '저녁'].map(mealTime => (
                             <div key={mealTime}>
                                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '4px', marginTop: '5px' }}>
@@ -155,13 +144,15 @@ function Main() {
                     <div style={{ width: '550px', margin: '0 auto', fontSize: 20, fontWeight: 'bold', position: 'relative' }}>
                         나의 복약
                         <button
-                            style={styles.moveButton}
-                            onClick={() => navigate('/Medicine')}
+                            style={styles.moveButton} onClick={() => navigate('/Medicine')}
                         >
                             이동
                         </button>
                     </div>
-                    <div style={{ width: '550px', margin: '0 auto', marginBottom: 15, border: '5px solid #d9d9d9', borderRadius: '6px', backgroundColor: '#f0f3f6' }}>
+                    <div style={{ width: '550px', margin: '0 auto', marginBottom: 15, border: '5px solid #d9d9d9', 
+                                    borderRadius: '6px', backgroundColor: '#f0f3f6'
+                                    }}
+                    >
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '4px', marginTop: '5px' }}>
                             <img src={medicineIcon} style={{ marginLeft: '5px' }} alt="영양제 아이콘" />
                             <span style={{ fontWeight: 'bold', marginLeft: '5px' }}>영양제</span>
@@ -182,14 +173,14 @@ function Main() {
                     {/* 나의 운동 */}
                     <div style={{ width: '550px', margin: '0 auto', fontSize: 20, fontWeight: 'bold', position: 'relative' }}>
                         나의 운동
-                        <button
-                            style={styles.moveButton}
-                            onClick={() => navigate('/Exercise')}
-                        >
+                        <button style={styles.moveButton} onClick={() => navigate('/Exercise')}>
                             이동
                         </button>
                     </div>
-                    <div style={{ width: '550px', margin: '0 auto', marginBottom: 15, border: '5px solid #d9d9d9', borderRadius: '6px', backgroundColor: '#f0f3f6' }}>
+                    <div style={{ width: '550px', margin: '0 auto', marginBottom: 15, border: '5px solid #d9d9d9',
+                                    borderRadius: '6px', backgroundColor: '#f0f3f6'
+                                    }}
+                    >
                         {['하체', '어깨', '가슴', '팔'].map(part => (
                             <div key={part} style={{ marginBottom: 12 }}>
                                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: 4, marginTop: 5 }}>
@@ -213,38 +204,12 @@ function Main() {
 export default Main;
 
 const styles = {
-    container: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '400px',
-    },
-    box: {
-        padding: '90px',
-        border: '2px solid #8300ff',
-        borderRadius: '30px',
-        backgroundColor: '#8300ff',
-        width: '100%',
-        textAlign: 'center'
-    },
-    text: {
-        fontSize: '40px',
-        fontWeight: 'bold',
-        color: 'white',
-        whiteSpace: 'nowrap'
-    },
-    moveButton: {
-        position: 'absolute',
-        right: 0,
-        bottom: 0,
-        padding: '5px 10px',
-        fontSize: '14px',
-        fontWeight: 'bold',
-        backgroundColor: '#8300ff',
-        color: 'white',
-        border: 'none',
-        borderRadius: '6px',
-        cursor: 'pointer',
-        userSelect: 'none',
-    }
+    container: {display: 'flex', justifyContent: 'center', alignItems: 'center', height: '400px'},
+    box: {padding: '90px', border: '2px solid #8300ff', borderRadius: '30px', backgroundColor: '#8300ff',
+            width: '100%', textAlign: 'center'
+        },
+    text: {fontSize: '40px', fontWeight: 'bold', color: 'white', whiteSpace: 'nowrap'},
+    moveButton: {position: 'absolute', right: 0, bottom: 0, padding: '5px 10px', fontSize: '14px', fontWeight: 'bold',
+                backgroundColor: '#8300ff', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', userSelect: 'none'
+            }
 };

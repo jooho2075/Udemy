@@ -81,63 +81,35 @@ function HorizontalCalendar({ onDateSelect }) {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        background: "#F3F0F6",
-        padding: "10px",
-        position: "relative",
-      }}
+    <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%", background: "#F3F0F6",
+                  padding: "10px", position: "relative"
+                }}
     >
       {/* 왼쪽 버튼 */}
-      <button
-        onClick={() => {
-          loadMoreDaysLeft();
-          scrollLeft();
-        }}
-        style={{
-          height: "50px",
-          width: "50px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          marginRight: "10px",
-          padding: "10px",
-          cursor: "pointer",
-          fontSize: 30,
-        }}
+      <button onClick={() => {
+        loadMoreDaysLeft();
+        scrollLeft();
+      }}
+              style={{height: "50px", width: "50px", display: "flex", alignItems: "center", justifyContent: "center",
+                      marginRight: "10px", padding: "10px", cursor: "pointer", fontSize: 30
+                    }}
       >
         ◀
       </button>
 
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          overflowX: "auto",
-          whiteSpace: "nowrap",
-          width: "60%", // 5개 날짜만 보이도록 조정
-          position: "relative",
-        }}
-        ref={scrollContainerRef}
+      <div style={{display: "flex", alignItems: "center", overflowX: "auto", 
+                  whiteSpace: "nowrap", width: "60%", // 5개 날짜만 보이도록 조정
+                  position: "relative"
+                }}
+                  ref={scrollContainerRef}
       >
         <ScrollMenu>
           {days.map((day) => (
-            <div
-              key={day}
-              onClick={() => handleDateClick(day)}
-              style={{
-                padding: "10px 20px",
-                margin: "5px",
-                borderRadius: "10px",
-                fontSize: 20,
-                background: selectedDate === day ? "#2678E4" : "gray",
-                color: selectedDate === day ? "white" : "black",
-                cursor: "pointer",
-              }}
+            <div key={day} onClick={() => handleDateClick(day)}
+                  style={{padding: "10px 20px", margin: "5px", borderRadius: "10px", fontSize: 20,
+                          background: selectedDate === day ? "#2678E4" : "gray",
+                          color: selectedDate === day ? "white" : "black", cursor: "pointer"
+                          }}
             >
               {day}
             </div>
@@ -146,22 +118,13 @@ function HorizontalCalendar({ onDateSelect }) {
       </div>
 
       {/* 오른쪽 버튼 */}
-      <button
-        onClick={() => {
-          loadMoreDaysRight();
-          scrollRight();
-        }}
-        style={{
-          height: "50px",
-          width: "50px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          marginLeft: "10px",
-          padding: "10px",
-          cursor: "pointer",
-          fontSize: 30,
-        }}
+      <button onClick={() => {
+        loadMoreDaysRight();
+        scrollRight();
+      }}
+              style={{height: "50px", width: "50px", display: "flex", alignItems: "center",
+                      justifyContent: "center", marginLeft: "10px", padding: "10px", cursor: "pointer", fontSize: 30
+                      }}
       >
         ▶
       </button>

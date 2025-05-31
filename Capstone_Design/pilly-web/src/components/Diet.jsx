@@ -48,10 +48,8 @@ function Diet() {
             <div style={styles.mealRow}>
               <span style={styles.mealText}>
                 오늘의 식단
-                <img
-                  src={addMealImage}
-                  alt="식단 아이콘"
-                  style={{ verticalAlign: 'middle', marginLeft: 5, display: 'inline-block' }}
+                <img src={addMealImage} alt="식단 아이콘"
+                      style={{ verticalAlign: 'middle', marginLeft: 5, display: 'inline-block' }}
                 />
               </span>
               <button style={styles.addButton} onClick={() => navigate('/AddDiet')}>

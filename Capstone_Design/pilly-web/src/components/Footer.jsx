@@ -3,14 +3,10 @@ import logo from '../assets/new_logo.png';
 function Footer() {
     return(
         <>
-            <footer style={{
-                backgroundColor: "#000000", 
-                display: "flex", 
-                justifyContent: "center", 
-                alignItems: "center",
-                width: "100%",
-                height: 150
-            }}>
+            <footer style={{backgroundColor: "#000000", display: "flex", justifyContent: "center", alignItems: "center",
+                            width: "100%", height: 150
+                            }}
+            >
                 <div style={{display: "flex", alignItems: "center"}}>
                     <img src={logo} style={{marginRight: "10px"}}/>
                     <div>

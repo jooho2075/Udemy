@@ -63,19 +63,20 @@ function Medicine() {
                                 <span style={styles.mealText}>
                                     나의 복약
                                     <img src={redMedicineIcon} alt="빨간약 이미지" 
-                                            style={{ verticalAlign: 'middle', marginLeft: '5px', display: 'inline-block' }}
+                                        style={{ verticalAlign: 'middle', marginLeft: '5px', display: 'inline-block' }}
                                     />
                                 </span>
                             </div>
-                            <button style={styles.addButton} 
-                                    onClick={() => navigate('/AddMedicine', { state: { selectedDate } })}
-                            >
+                            <button style={styles.addButton} onClick={() => navigate('/AddMedicine', { state: { selectedDate } })}>
                                 복용약 추가
                             </button>
                         </div>
 
                         {/* 총 섭취량 및 각 개수 - 가로 정렬 */}
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '10px', marginBottom: '20px', gap: '30px' }}>
+                        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '10px', 
+                                    marginBottom: '20px', gap: '30px'
+                                    }}
+                        >
                             {/* 총 섭취량 박스 */}
                             <div style={{border: '2px solid gray', borderRadius: '8px', padding: '10px', backgroundColor: 'white',
                                         width: '150px', height: '150px', display: 'flex', flexDirection: 'column', justifyContent: 'center',
@@ -102,7 +103,10 @@ function Medicine() {
 
                         {/* 아침, 점심, 저녁 표시*/}
                         <div style={{ marginTop: '20px', textAlign: 'center' }}>
-                            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '60px', flexWrap: 'nowrap' }}>
+                            <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+                                        gap: '60px', flexWrap: 'nowrap'
+                                        }}
+                            >
                                 {summaryByTime.map((item, idx) => (
                                     <div key={item.time} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '80px' }}>
                                         <p style={{ fontSize: '20px', fontWeight: 'bold' }}>{item.time}</p>
@@ -113,7 +117,10 @@ function Medicine() {
                         </div>
 
                         {/* 수정된 네모 박스 3개 */}
-                        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '20px', marginTop: '30px', flexWrap: 'wrap'}}>
+                        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '20px', marginTop: '30px', 
+                                    flexWrap: 'wrap'
+                                    }}
+                        >
                             {['아침', '점심', '저녁'].map((timeLabel) => {
                                 const vitaminList = vitamins.filter(v => v.time === timeLabel);
                                 const medicineList = medicines.filter(m => m.time === timeLabel);
@@ -138,7 +145,12 @@ function Medicine() {
                                                 <div key={index} style={{ marginBottom: '10px' }}>
                                                     <p><span style={{ fontWeight: 'bold' }}>시간 : </span>{vitamin.time}</p>
                                                     <p><span style={{ fontWeight: 'bold' }}>이름 : </span>{vitamin.name}</p>
-                                                    <p style={{ marginBottom: '5px' }}><span style={{ fontWeight: 'bold' }}>갯수 : </span>{vitamin.count}</p>
+                                                    <p style={{ marginBottom: '5px' }}>
+                                                        <span style={{ fontWeight: 'bold' }}>
+                                                            갯수 : 
+                                                        </span>
+                                                        {vitamin.count}
+                                                    </p>
                                                     <hr />
                                                 </div>
                                             ))
@@ -178,19 +190,10 @@ const styles = {
     dateText: { fontSize: 40, fontWeight: 'bold', color: 'black' },
     mealRow: { display: 'flex', alignItems: 'center', gap: 10, marginTop: 10 },
     mealText: { marginTop: 10, marginRight: 20, fontSize: 24, fontWeight: 'bold', color: '#333' },
-    addButton: { 
-        padding: '8px 16px', 
-        fontSize: 20, 
-        cursor: 'pointer', 
-        display: 'flex', 
-        alignItems: 'center',
-        marginLeft: 20,
-        fontWeight: 'bold',
-        border: '1px solid #2678E4',
-        borderRadius: '8px',
-        color: 'white',
-        backgroundColor: '#2678E4'
-    }
+    addButton: {padding: '8px 16px', fontSize: 20, cursor: 'pointer', display: 'flex', alignItems: 'center',
+                marginLeft: 20, fontWeight: 'bold', border: '1px solid #2678E4', borderRadius: '8px', color: 'white',
+                backgroundColor: '#2678E4'
+            }
 };
 
 export default Medicine;

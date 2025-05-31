@@ -89,8 +89,7 @@ function AddDiet() {
         {/* 상단 select + 플러스 버튼 + 완료 버튼 */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <select defaultValue=""
-            style={{ width: 140, textAlign: 'center', border: '1px solid black', padding: '8px 12px', fontSize: 16, marginRight: 'auto' }}
-          >
+            style={{ width: 140, textAlign: 'center', border: '1px solid black', padding: '8px 12px', fontSize: 16, marginRight: 'auto' }}>
             <option value="" disabled>-- 선택 --</option>
             <option value="아침">아침</option>
             <option value="점심">점심</option>
@@ -100,10 +99,9 @@ function AddDiet() {
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft: 10 }}>
             <img src={addImage} alt="추가" style={{ width: 30, height: 30, cursor: 'pointer' }} onClick={handleAddInput} />
             <button onClick={handleFinish}
-              style={{
-                marginTop: 8, padding: '6px 12px', backgroundColor: "#2678E4", border: '1px solid #2678E4',
-                borderRadius: 6, color: 'white', cursor: 'pointer'
-              }}
+              style={{marginTop: 8, padding: '6px 12px', backgroundColor: "#2678E4", border: '1px solid #2678E4',
+                      borderRadius: 6, color: 'white', cursor: 'pointer'
+                      }}
             >
               완료
             </button>
@@ -119,10 +117,9 @@ function AddDiet() {
                 style={{ flex: 1, padding: 8, fontSize: 16, border: '1px solid black', borderRadius: 4, textAlign: 'center' }}
               />
               <button onClick={() => handleDeleteInput(index)}
-                style={{
-                  marginLeft: 10, padding: '6px 12px', backgroundColor: "#F05636", border: '1px solid #F05636',
-                  borderRadius: 6, color: 'white', cursor: 'pointer'
-                }}
+                style={{marginLeft: 10, padding: '6px 12px', backgroundColor: "#F05636", border: '1px solid #F05636',
+                        borderRadius: 6, color: 'white', cursor: 'pointer'
+                      }}
               >
                 삭제
               </button>
@@ -134,10 +131,9 @@ function AddDiet() {
         {showSaveButton && (
           <div style={{ textAlign: 'center', marginTop: 20 }}>
             <button onClick={handleSave}
-              style={{
-                padding: '10px 20px', backgroundColor: '#2678E4', color: 'white', border: 'none',
-                borderRadius: 6, fontSize: 16, cursor: 'pointer'
-              }}
+              style={{padding: '10px 20px', backgroundColor: '#2678E4', color: 'white', border: 'none',
+                      borderRadius: 6, fontSize: 16, cursor: 'pointer'
+                      }}
             >
               저장
             </button>
@@ -146,17 +142,16 @@ function AddDiet() {
 
         {/* 모달 */}
         {showModal && (
-          <div style={{
-            position: 'fixed', top: 20, left: '50%', transform: 'translateX(-50%)', backgroundColor: 'white',
-            border: '1px solid #2678E4', padding: '20px 30px', borderRadius: 8, boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
-            zIndex: 9999, textAlign: 'center'
-          }}>
+          <div style={{position: 'fixed', top: 20, left: '50%', transform: 'translateX(-50%)', backgroundColor: 'white',
+                        border: '1px solid #2678E4', padding: '20px 30px', borderRadius: 8, boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        zIndex: 9999, textAlign: 'center'
+                        }}
+          >
             <p style={{ marginBottom: 16, fontSize: 16 }}>{modalMessage}</p>
             <button onClick={handleCloseModal}
-              style={{
-                padding: '6px 16px', backgroundColor: '#2678E4', color: 'white',
-                border: 'none', borderRadius: 6, cursor: 'pointer'
-              }}
+              style={{padding: '6px 16px', backgroundColor: '#2678E4', color: 'white', 
+                      border: 'none', borderRadius: 6, cursor: 'pointer'
+                      }}
             >
               확인
             </button>
