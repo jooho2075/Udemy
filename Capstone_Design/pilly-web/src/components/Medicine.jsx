@@ -62,16 +62,13 @@ function Medicine() {
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <span style={styles.mealText}>
                                     나의 복약
-                                    <img 
-                                        src={redMedicineIcon} 
-                                        alt="빨간약 이미지" 
-                                        style={{ verticalAlign: 'middle', marginLeft: '5px', display: 'inline-block' }}
+                                    <img src={redMedicineIcon} alt="빨간약 이미지" 
+                                            style={{ verticalAlign: 'middle', marginLeft: '5px', display: 'inline-block' }}
                                     />
                                 </span>
                             </div>
-                            <button 
-                                style={styles.addButton} 
-                                onClick={() => navigate('/AddMedicine', { state: { selectedDate } })}
+                            <button style={styles.addButton} 
+                                    onClick={() => navigate('/AddMedicine', { state: { selectedDate } })}
                             >
                                 복용약 추가
                             </button>
@@ -80,25 +77,15 @@ function Medicine() {
                         {/* 총 섭취량 및 각 개수 - 가로 정렬 */}
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '10px', marginBottom: '20px', gap: '30px' }}>
                             {/* 총 섭취량 박스 */}
-                            <div style={{
-                                border: '2px solid gray',
-                                borderRadius: '8px',
-                                padding: '10px',
-                                backgroundColor: 'white',
-                                width: '150px',
-                                height: '150px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                textAlign: 'center',
-                            }}>
+                            <div style={{border: '2px solid gray', borderRadius: '8px', padding: '10px', backgroundColor: 'white',
+                                        width: '150px', height: '150px', display: 'flex', flexDirection: 'column', justifyContent: 'center',
+                                        alignItems: 'center', textAlign: 'center',
+                                    }}
+                            >
                                 <p style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>
                                     총 섭취량
                                 </p>
-                                <p style={{ fontSize: 20, color: '#2678E4', fontWeight: 'bold' }}>
-                                    {totalCount}개
-                                </p>
+                                <p style={{ fontSize: 20, color: '#2678E4', fontWeight: 'bold' }}>{totalCount}개</p>
                             </div>
 
                             {/* 영양제 / 처방약 개수 박스 */}
@@ -126,32 +113,21 @@ function Medicine() {
                         </div>
 
                         {/* 수정된 네모 박스 3개 */}
-                        <div style={{
-                            display: 'flex',
-                            flexDirection: 'row',
-                            justifyContent: 'center',
-                            gap: '20px',
-                            marginTop: '30px',
-                            flexWrap: 'wrap',
-                        }}>
+                        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '20px', marginTop: '30px', flexWrap: 'wrap'}}>
                             {['아침', '점심', '저녁'].map((timeLabel) => {
                                 const vitaminList = vitamins.filter(v => v.time === timeLabel);
                                 const medicineList = medicines.filter(m => m.time === timeLabel);
 
                                 return (
-                                    <div key={timeLabel} style={{
-                                        backgroundColor: '#F0F3F6',
-                                        border: '2px solid #F0F3F6',
-                                        borderRadius: '6px',
-                                        padding: '20px',
-                                        width: '300px',
-                                        minHeight: '200px',
-                                        boxSizing: 'border-box'
-                                    }}>
-                                        <h3 style={{
-                                            fontSize: '20px', fontWeight: 'bold', marginBottom: '10px', display: 'flex',
-                                            alignItems: 'center', justifyContent: 'flex-start', gap: '5px'
-                                        }}>
+                                    <div key={timeLabel} 
+                                            style={{backgroundColor: '#F0F3F6', border: '2px solid #F0F3F6', borderRadius: '6px',
+                                                    padding: '20px', width: '300px', minHeight: '200px', boxSizing: 'border-box'
+                                            }}
+                                    >
+                                        <h3 style={{fontSize: '20px', fontWeight: 'bold', marginBottom: '10px', display: 'flex',
+                                                    alignItems: 'center', justifyContent: 'flex-start', gap: '5px'
+                                            }}
+                                        >
                                             <img src={medicineIcon} alt="복용약 아이콘" />
                                             {timeLabel}
                                         </h3>
