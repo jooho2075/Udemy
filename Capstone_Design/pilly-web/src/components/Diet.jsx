@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import HorizontalCalendar from './Calendar';
 
+import addMealImage from '../assets/fluent_food-24-regular.png';
+
 function Diet() {
     const navigate = useNavigate();
 
@@ -16,13 +18,20 @@ function Diet() {
                     <div style={styles.textContainer}>
                         {selectedDate && <h2 style={styles.dateText}>{selectedDate}</h2>}
                         <div style={styles.mealRow}>
-                            <span style={styles.mealText}>오늘의 식단</span>
+                            <span style={styles.mealText}>
+                                오늘의 식단
+                                <img src={addMealImage} alt="식단 이미지" style={{ verticalAlign: 'middle', marginLeft: '5px', display: 'inline-block' }}/>
+                            </span>
                             <button 
                                 style={styles.addButton}
                                 onClick={() => navigate('/AddDiet')}
                             >
                                 메뉴 추가
                             </button>
+                        </div>
+
+                        <div>
+                            이곳에 내용이 들어갈 예정
                         </div>
                     </div>
                 </div>
