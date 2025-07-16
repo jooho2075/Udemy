@@ -67,8 +67,13 @@ function App() {
     });
   }
 
+  const ctxValue = {
+    items: shoppingCart.items,
+    addItemToCart: handleAddItemToCart
+  }
+
   return (
-    <CartContext value={{items: []}}> {/* 지금 방식에서 작동하지 않을 경우 구방식인 CartContext.Provider 사용*/}
+    <CartContext value={ctxValue}> {/* 지금 방식에서 작동하지 않을 경우 구방식인 CartContext.Provider 사용*/}
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
