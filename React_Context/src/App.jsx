@@ -68,7 +68,7 @@ function App() {
   }
 
   return (
-    <CartContext> {/* 지금 방식에서 작동하지 않을 경우 구방식인 CartContext.Provider 사용*/}
+    <CartContext value={{items: []}}> {/* 지금 방식에서 작동하지 않을 경우 구방식인 CartContext.Provider 사용*/}
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
