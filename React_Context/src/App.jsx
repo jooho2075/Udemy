@@ -67,16 +67,19 @@ function App() {
     });
   }
 
+  const ctxValue = {
+    items: shoppingCart.items,
+    addItemtoCart: handleAddItemToCart,
+    updateItemQuantity: handleUpdateCartItemQuantity
+  };
+
   return (
-    <CartContext value={{items: []}}> {/* 지금 방식에서 작동하지 않을 경우 구방식인 CartContext.Provider 사용*/}
-      <Header
-        cart={shoppingCart}
-        onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
-      />
+    <CartContext value={ctxValue}> {/* 지금 방식에서 작동하지 않을 경우 구방식인 CartContext.Provider 사용*/}
+      <Header/>
       <Shop>
         {DUMMY_PRODUCTS.map((product) => (
           <li key={product.id}>
-            <Product {...product} onAddToCart={handleAddItemToCart} />
+            <Product {...product} />
           </li>
         ))}
       </Shop>
